@@ -92,7 +92,7 @@ export default function App() {
       <div className="grid-bg fixed inset-0 z-0 opacity-50" />
 
       {/* Floating Glossy Nav Bar */}
-      <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 px-12 py-4 rounded-full bg-black/80 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] flex gap-12 items-center transition-all duration-500 hover:bg-black/90">
+      <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 px-12 py-4 rounded-full bg-black/80 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] flex gap-12 items-center transition-all duration-500 hover:bg-black/90">
         {[
           { id: "home", label: "Home" },
           { id: "about", label: "About" },
@@ -260,7 +260,7 @@ export default function App() {
                 <div className="space-y-4">
                   <span className="text-[10px] font-black tracking-[0.2em] uppercase opacity-30">Philosophy</span>
                   <p className="text-lg font-light leading-relaxed text-black/70">
-                    I believe in the power of <span className="italic">meticulous planning</span>. For me, every project is a delicate balance between aesthetic design and robust logic—paying attention to every detail to ensure a seamless user experience.
+                    I believe in the power of <span className="italic">meticulous planning</span>. For me, every project is a delicate balance between aesthetic design and robust logic paying attention to every detail to ensure a seamless user experience.
                   </p>
                 </div>
               </div>
