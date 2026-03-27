@@ -120,7 +120,7 @@ export default function App() {
       {/* Main Hero Section (Fixed) */}
       <section className="fixed inset-0 flex items-center justify-center overflow-hidden">
         {/* Large Background Text & Portrait Container */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none select-none space-y-4 md:space-y-8">
+        <div className="absolute inset-0 pt-10 md:pt-0 flex flex-col items-center justify-center pointer-events-none select-none space-y-4 md:space-y-8">
           {/* Line 1: MERGA + Portrait (Reordered for Mobile) */}
           <motion.div 
             style={{ x: xLeft }}
@@ -151,8 +151,8 @@ export default function App() {
               </div>
               
               {/* Floating Label */}
-              <div className="absolute -right-15 top-3/4 z-30 bg-black text-white px-2 py-2 shadow-xl rounded-full hidden lg:flex items-center justify-center">
-                <span className="text-[8px] font-black tracking-[0.3em] uppercase">Creative Dev.</span>
+              <div className="absolute -right-15 top-3/4 z-30 bg-black text-white px-2 py-2 shadow-xl rounded-full lg:flex items-center justify-center">
+                <span className="text-[10px] font-black tracking-[0.3em] uppercase">Software Engineer</span>
               </div>
             </motion.div>
 
@@ -323,7 +323,7 @@ export default function App() {
             </h2>
             <div className="flex items-center gap-4 mt-8 opacity-40">
               <div className="h-[1px] w-12 bg-white" />
-              <span className="text-[10px] font-black tracking-[0.4em] uppercase">04 Projects</span>
+              <span className="text-[10px] font-black tracking-[0.4em] uppercase">Projects</span>
             </div>
           </motion.div>
 
@@ -406,7 +406,7 @@ export default function App() {
             <div className="space-y-8">
               <p className="text-2xl md:text-4xl font-light leading-tight text-black/80">
                 I'm always open to <span className="italic">new opportunities</span>, 
-                collaborations, or just a friendly chat about technology and design.
+                collaborations, or just a friendly chat about technology and engineering.
               </p>
               
               <div className="flex flex-wrap gap-6 items-center">
@@ -457,8 +457,12 @@ export default function App() {
             <div className="p-8 md:p-12 bg-black text-white rounded-3xl space-y-6">
               <h3 className="text-2xl font-display">Direct Message</h3>
               <p className="text-white/40 text-sm font-light">
+                Call me at <br />
+                <a href="tel:+251966203485" className="text-white font-bold hover:underline">+251 966 203 485</a>
+              </p>
+              <p className="text-white/40 text-sm font-light">
                 Prefer email? Reach out directly at <br />
-                <a href="mailto:mergaMekonnen7@gmail.com" className="text-white font-bold hover:underline">mergaMekonnen7@gmail.com</a>
+                <a href="mailto:mergaMekonnen7@gmail.com" className="text-white font-bold hover:underline">mergamekonnen7@gmail.com</a>
               </p>
               <div className="pt-6">
                 <motion.a
@@ -480,10 +484,10 @@ export default function App() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
           <div className="space-y-4">
             <h4 className="text-4xl md:text-6xl font-display tracking-tighter">MERGA <br /> MEKONNEN</h4>
-            <p className="text-white/20 text-xs font-bold uppercase tracking-[0.2em]">Software Engineer & Product Designer</p>
+            <p className="text-white/20 text-xs font-bold uppercase tracking-[0.2em]">Software Engineer</p>
           </div>
           
-          <div className="flex flex-col md:flex-row gap-12 md:gap-24 text-[10px] font-bold uppercase tracking-widest">
+          <div className="flex flex-row gap-50 md:flex-row gap-12 md:gap-24 text-[10px] font-bold uppercase tracking-widest">
             <div className="space-y-4">
               <span className="opacity-30">Quick Links</span>
               <nav className="flex flex-col gap-2">
@@ -504,7 +508,6 @@ export default function App() {
         <div className="max-w-6xl mx-auto mt-24 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-bold uppercase tracking-widest opacity-40">
           <span>© 2026 Merga MEKONNEN. All rights reserved.</span>
           <div className="flex gap-8">
-            <span>2026</span>
             <a href="#" className="hover:text-white transition-colors">Back to top ↑</a>
           </div>
         </div>
