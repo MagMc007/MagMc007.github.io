@@ -1,6 +1,5 @@
 /**
  * @license
- * SPDX-License-Identifier: Apache-2.0
  */
 
 import { motion, useScroll, useTransform } from "motion/react";
@@ -84,7 +83,7 @@ export default function App() {
   };
 
   return (
-    <div ref={containerRef} className="relative min-h-[200vh] w-full font-sans selection:bg-black selection:text-white">
+    <div ref={containerRef} className="scroll-smooth relative min-h-[200vh] w-full font-sans selection:bg-black selection:text-white">
       {/* Scroll Target for Home */}
       <div id="home" className="h-screen w-full" />
 
@@ -92,7 +91,7 @@ export default function App() {
       <div className="grid-bg fixed inset-0 z-0 opacity-50" />
 
       {/* Floating Glossy Nav Bar */}
-      <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 px-12 py-4 rounded-full bg-black/80 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] flex gap-12 items-center transition-all duration-500 hover:bg-black/90">
+      <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 px-10 py-3 rounded-full bg-black/50 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] flex gap-12 items-center transition-all duration-500 hover:bg-black/90">
         {[
           { id: "home", label: "Home" },
           { id: "about", label: "About" },
@@ -191,9 +190,9 @@ export default function App() {
         </div>
 
         {/* Navigation / UI Elements */}
-        <div className="absolute top-8 left-8 z-30">
+        {/* <div className="absolute top-8 left-8 z-30">
           <span className="text-2xl font-display tracking-tighter lowercase italic opacity-80">mag</span>
-        </div>
+        </div> */}
 
         {/* Bottom UI */}
         <div className="absolute bottom-8 left-8 z-30">
@@ -226,7 +225,7 @@ export default function App() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-6xl md:text-9xl font-display tracking-tighter leading-[0.85] mb-8">
+              <h2 className="text-6xl md:text-9xl pt-10 md:pt-0 font-display tracking-tighter leading-[0.85] mb-8">
                 THE <br />
                 <span className="text-outline">ENGINEER</span>
               </h2>
@@ -276,14 +275,14 @@ export default function App() {
                 <span className="text-[10px] font-black tracking-[0.2em] uppercase opacity-30">Tech Stack & Tools</span>
                 <div className="flex flex-wrap gap-6 items-center">
                   {[
+                    { name: "JavaScript", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
                     { name: "React", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
                     { name: "Node.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-                    { name: "Go", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" },
-                    { name: "Docker", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+                    { name: "Express", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
                     { name: "Python", src: "https://skillicons.dev/icons?i=py" },
                     { name: "Django", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
-                    { name: "Express", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-                    { name: "JavaScript", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+                    { name: "Go", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" },
+                    { name: "Docker", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
                     { name: "MySQL", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
                     { name: "Postman", src: "https://skillicons.dev/icons?i=postman" },
                     { name: "GitHub", src: "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" },
@@ -318,7 +317,7 @@ export default function App() {
             transition={{ duration: 0.8 }}
             className="mb-16 md:mb-24"
           >
-            <h2 className="text-6xl md:text-9xl font-display tracking-tighter leading-none">
+            <h2 className="text-6xl md:text-9xl pt-10 md:pt-0 font-display tracking-tighter leading-none">
               SELECTED <br />
               <span className="text-white/20">WORKS</span>
             </h2>
@@ -393,7 +392,7 @@ export default function App() {
             transition={{ duration: 0.8 }}
             className="mb-16 md:mb-24"
           >
-            <h2 className="text-6xl md:text-9xl font-display tracking-tighter leading-none">
+            <h2 className="text-6xl md:text-9xl pt-10 md:pt-0 font-display tracking-tighter leading-none">
               GET IN <br />
               <span className="text-black/20">TOUCH</span>
             </h2>
