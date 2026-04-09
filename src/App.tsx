@@ -283,10 +283,11 @@ export default function App() {
                     { name: "Django", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
                     { name: "Go", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" },
                     { name: "Docker", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+                    { name: "MongoDB", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+                    { name: "Mongoose", src: "https://avatars.githubusercontent.com/u/7552965?s=200&v=4" },
                     { name: "MySQL", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
                     { name: "Postman", src: "https://skillicons.dev/icons?i=postman" },
                     { name: "GitHub", src: "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" },
-                    { name: "Selenium", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" },
                   ].map((tech) => (
                     <div key={tech.name} className="group relative">
                       <img 
