@@ -1,5 +1,6 @@
 {
-  "name": "Merga Shasho Portfolio",
-  "description": "A high-end, animated portfolio homepage inspired by creative editorial designs.",
-  "requestFramePermissions": []
+  "name": "Merga Mekonnen – Software Engineer Portfolio",
+  "description": "Software Engineering portfolio of Merga Mekonnen featuring full-stack projects, technical timeline, and contact information.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
