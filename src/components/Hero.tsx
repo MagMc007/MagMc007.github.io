@@ -24,7 +24,7 @@ export default function Hero({ xLeft, xRight, onContactClick }: HeroProps) {
       <div className="grid-bg fixed inset-0 z-0 opacity-50 pointer-events-none" />
 
       {/* Main Hero Container */}
-      <div className="absolute inset-0 pt-10 md:pt-0 flex flex-col items-center justify-center pointer-events-none space-y-4 md:space-y-8">
+      <div className="absolute inset-0 pt-24 sm:pt-28 md:pt-16 flex flex-col items-center justify-center pointer-events-none space-y-4 md:space-y-8">
         {/* Line 1: MERGA + Portrait */}
         <motion.div
           style={{ x: xLeft }}

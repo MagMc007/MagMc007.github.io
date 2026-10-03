@@ -14,36 +14,36 @@ export default function Navbar({
   onResumeClick
 }: NavbarProps) {
   const navItems = [
-    { id: "home", label: "HOME" },
-    { id: "about", label: "ABOUT" },
-    { id: "timeline", label: "EXPERIENCE" },
-    { id: "projects", label: "WORK" },
-    { id: "contact", label: "CONTACT" }
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "timeline", label: "Experience" },
+    { id: "projects", label: "Work" },
+    { id: "contact", label: "Contact" }
   ];
 
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 pointer-events-auto">
       <nav
         aria-label="Primary Navigation"
-        className="px-5 sm:px-8 md:px-10 py-3 rounded-full bg-black/50 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] flex items-center gap-4 sm:gap-8 md:gap-10 transition-all duration-300 hover:bg-black/60"
+        className="px-4 sm:px-7 md:px-9 py-2 sm:py-2.5 rounded-full bg-black/60 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.35)] flex items-center gap-3 sm:gap-6 md:gap-8 transition-all duration-300 hover:bg-black/85"
       >
-        {/* Navigation Links including EXPERIENCE */}
-        <div className="flex items-center gap-4 sm:gap-7 md:gap-9">
+        {/* Navigation Links */}
+        <div className="flex items-center gap-3 sm:gap-5 md:gap-7">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             return (
               <button
                 key={item.id}
                 onClick={() => onNavigateHomeSection(item.id)}
-                className={`text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 relative py-1 focus-visible:outline-white whitespace-nowrap ${
-                  isActive ? "text-white" : "text-white/40 hover:text-white"
+                className={`text-xs sm:text-[13px] md:text-sm font-bold tracking-[0.16em] transition-all duration-300 relative px-1 py-1.5 flex items-center justify-center leading-none focus-visible:outline-white whitespace-nowrap cursor-pointer ${
+                  isActive ? "text-white" : "text-white/45 hover:text-white"
                 }`}
               >
-                {item.label}
+                <span>{item.label}</span>
                 {isActive && (
                   <motion.div
                     layoutId="nav-active"
-                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-white"
+                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-white rounded-full"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -52,15 +52,18 @@ export default function Navbar({
           })}
         </div>
 
-        {/* Visually Distinct Resume Button */}
-        <div className="flex items-center pl-2 sm:pl-3 border-l border-white/15">
+        {/* Centered Separator Divider */}
+        <div className="h-5 sm:h-6 w-[1px] bg-white/20 shrink-0 self-center" aria-hidden="true" />
+
+        {/* Visually Distinct and Centered Resume Button */}
+        <div className="flex items-center justify-center">
           <button
             onClick={onResumeClick}
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-black text-[9px] font-black uppercase tracking-[0.2em] shadow-sm hover:bg-neutral-200 transition-all active:scale-95 focus-visible:outline-white"
+            className="inline-flex items-center justify-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-white text-black text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.16em] shadow-md hover:bg-neutral-100 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer focus-visible:outline-white leading-none"
             title="View or download Resume"
           >
-            <FileText size={11} className="shrink-0" />
-            <span>Resume</span>
+            <FileText size={15} className="shrink-0" />
+            <span className="leading-none">Resume</span>
           </button>
         </div>
       </nav>
