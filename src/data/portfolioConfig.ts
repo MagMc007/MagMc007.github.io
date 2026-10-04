@@ -92,7 +92,7 @@ export const PORTFOLIO_DATA: PortfolioConfig = {
     lastName: "MEKONNEN",
     targetRole: "Software Engineer",
     location: "Addis Ababa, Ethiopia",
-    resumeUrl: "/resume.pdf",
+    resumeUrl: "https://drive.google.com/file/d/1QZ-gP4PoZAOQIPZuYENoHSLqHFwcRdI5/view?usp=sharing",
 
     // [MY BIO] - 2-3 short paragraphs (~100-150 words total)
     bioParagraphs: [

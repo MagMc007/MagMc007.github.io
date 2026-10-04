@@ -75,13 +75,12 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
               <a
                 href={personal.resumeUrl}
-                download="Merga_Mekonnen_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 py-3 px-5 rounded-xl bg-white text-black font-black uppercase text-xs tracking-wider flex items-center justify-center gap-2 hover:bg-neutral-200 transition-colors shadow-md"
               >
                 <Download size={15} />
-                <span>Download PDF ({personal.resumeUrl})</span>
+                <span>Open Resume (PDF)</span>
               </a>
 
               <a

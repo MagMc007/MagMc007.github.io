@@ -73,7 +73,6 @@ export default function App() {
       <Navbar
         activeSection={activeSection}
         onNavigateHomeSection={handleNavigateHomeSection}
-        onResumeClick={() => setIsResumeModalOpen(true)}
       />
 
       {/* Main Portfolio Sections */}
