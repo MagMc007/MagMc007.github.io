@@ -86,24 +86,28 @@ export default function ProjectCaseStudyModal({ project, onClose }: ProjectCaseS
             </div>
 
             <div className="flex items-center gap-3">
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-black font-black uppercase text-[10px] tracking-wider hover:bg-neutral-200 transition-colors"
-              >
-                <span>Live Demo</span>
-                <ExternalLink size={12} />
-              </a>
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white font-black uppercase text-[10px] tracking-wider hover:bg-white/20 transition-colors"
-              >
-                <Github size={12} />
-                <span>GitHub</span>
-              </a>
+              {Boolean(project.liveUrl && project.liveUrl.trim()) && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-black font-black uppercase text-[10px] tracking-wider hover:bg-neutral-200 transition-colors"
+                >
+                  <span>Live Demo</span>
+                  <ExternalLink size={12} />
+                </a>
+              )}
+              {Boolean(project.githubUrl && project.githubUrl.trim()) && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white font-black uppercase text-[10px] tracking-wider hover:bg-white/20 transition-colors"
+                >
+                  <Github size={12} />
+                  <span>GitHub</span>
+                </a>
+              )}
             </div>
           </div>
 

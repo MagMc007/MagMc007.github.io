@@ -11,6 +11,37 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-color: #ffffff #000000;
+  scrollbar-width: thin;
+}
+
+* {
+  scrollbar-color: #ffffff #000000;
+  scrollbar-width: thin;
+}
+
+/* Custom WebKit Scrollbar - Black track with white scrollable bar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 9999px;
+  border: 2px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e5e5e5;
+}
+
+::-webkit-scrollbar-corner {
+  background: #000000;
 }
 
 body {

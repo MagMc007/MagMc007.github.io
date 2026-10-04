@@ -87,17 +87,19 @@ export default function ProjectsSection({ onSelectCaseStudy }: ProjectsSectionPr
 
                   {/* Hover Action Icons: Live Link, GitHub, and Case Study without darkening */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3.5 z-20 pointer-events-none group-hover:pointer-events-auto">
-                    {/* 1. Live Link */}
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3.5 rounded-full bg-white text-black hover:scale-110 active:scale-95 transition-transform shadow-2xl focus-visible:outline-white"
-                      title={actions.liveDemo}
-                      aria-label={`${actions.liveDemo} for ${project.title}`}
-                    >
-                      <ExternalLink size={18} />
-                    </a>
+                    {/* 1. Live Link (rendered only if liveUrl is provided and not empty) */}
+                    {Boolean(project.liveUrl && project.liveUrl.trim()) && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3.5 rounded-full bg-white text-black hover:scale-110 active:scale-95 transition-transform shadow-2xl focus-visible:outline-white"
+                        title={actions.liveDemo}
+                        aria-label={`${actions.liveDemo} for ${project.title}`}
+                      >
+                        <ExternalLink size={18} />
+                      </a>
+                    )}
 
                     {/* 2. GitHub */}
                     <a

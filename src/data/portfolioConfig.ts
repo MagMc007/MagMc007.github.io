@@ -135,13 +135,13 @@ export const PORTFOLIO_DATA: PortfolioConfig = {
       },
       {
         name: "LeetCode",
-        url: "https://leetcode.com/u/MagMC007/",
+        url: "https://leetcode.com/u/magnifico25/",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/leetcode/leetcode-original.svg"
       },
       {
         name: "Codeforces",
-        url: "https://codeforces.com/profile/MagMC",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeforces/codeforces-original.svg"
+        url: "https://codeforces.com/profile/Codermag",
+        icon: "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/codeforces/default.svg"
       },
       {
         name: "Telegram",
@@ -150,7 +150,7 @@ export const PORTFOLIO_DATA: PortfolioConfig = {
       },
       {
         name: "X",
-        url: "https://x.com/Merga132555",
+        url: "https://x.com/mag1XFX",
         icon: "https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg"
       }
     ]

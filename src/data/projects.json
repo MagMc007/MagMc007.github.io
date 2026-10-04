@@ -21,32 +21,41 @@
       "liveUrl": "https://kirayp2p.tech",
       "githubUrl": "https://github.com/MagMC007/Kiray",
       "caseStudy": {
-        "overview": "Engineered a low-latency telemetry ingestion pipeline processing 15,000+ metric points/sec with real-time anomaly detection, interactive waterfall traces, and automated alerts.",
-        "role": "Lead Systems Architect & Full-Stack Developer",
-        "timeline": "3 Months (2024)",
-        "problem": "Development teams struggle with bloated, expensive APM solutions requiring complex agent setups. DevPulse offers an ultra-lightweight daemon with sub-25ms query latency.",
-        "architecture": [
-          "Go & Gin microservice handling asynchronous batched streaming into ring buffers",
-          "Partitioned PostgreSQL time-series schema with Redis in-memory cache",
-          "Responsive React client with virtualized waterfall trace rendering"
-        ],
-        "challenges": [
-          {
-            "challenge": "Database write bottlenecks under bursts of 20,000 concurrent events.",
-            "solution": "Implemented an in-memory worker queue with bulk insert staging, reducing write IOPS by 78%."
-          },
-          {
-            "challenge": "Rendering large distributed trace trees without browser frame drops.",
-            "solution": "Created virtualized DOM rendering maintaining steady 60 FPS scrolling for 10,000+ spans."
-          }
-        ],
-        "metrics": [
-          { "value": "< 18ms", "label": "p99 Ingestion Latency" },
-          { "value": "15K+", "label": "Events / Sec" },
-          { "value": "78%", "label": "IOPS Reduction" },
-          { "value": "99.9%", "label": "Uptime" }
-        ]
-      }
+          "overview": "Engineered and deployed a full-stack P2P rental marketplace for Addis Ababa, enabling commission-free landlord listings, map-first property discovery, advanced filtering, direct contact, reviews, and role-driven administration.",
+          "role": "Solo Full-Stack Developer",
+          "timeline": "2026",
+          "problem": "Addis Ababa's rental market creates friction for both renters and landlords through broker fees, limited direct listing channels, unreliable property information, and difficulty navigating unfamiliar addresses. Kiray provides a centralized platform where landlords can self-list properties and renters can discover, evaluate, and contact them directly.",
+          "architecture": [
+            "Next.js 15, React 19, TypeScript, Redux Toolkit, and RTK Query frontend with feature-based architecture and runtime English/Amharic internationalisation",
+            "Layered Node.js and Express REST API using Routes → Controllers → Services → Models, with Firebase authentication and Zod request validation",
+            "MongoDB Atlas persistence with Mongoose, compound indexes, and native 2dsphere geospatial indexes for radius and bounding-box property discovery",
+            "Dockerized backend deployed through Azure Container Registry and Azure Container Apps, with Vercel hosting the frontend and independent GitHub Actions CI/CD pipelines"
+          ],
+          "challenges": [
+            {
+              "challenge": "Keeping listing, map, and dashboard data synchronized across multiple frontend features without manual refetch logic.",
+              "solution": "Built a shared RTK Query data layer with tag-based cache invalidation, allowing mutations across nine feature slices to automatically invalidate and refresh affected listing and saved-property data."
+            },
+            {
+              "challenge": "Supporting map-based property discovery without performing distance calculations in application code.",
+              "solution": "Implemented MongoDB 2dsphere indexes with native $nearSphere and $geoWithin queries for proximity-radius and bounding-box searches, allowing the database to handle geospatial filtering directly."
+            },
+            {
+              "challenge": "Maintaining testable business logic as the backend grew to include listings, reviews, favorites, authentication, moderation, and geospatial search.",
+              "solution": "Enforced a strict Routes → Controllers → Services → Models architecture, keeping controllers limited to HTTP concerns while isolating business rules, geospatial queries, and aggregations inside independently testable service functions."
+            },
+            {
+              "challenge": "Creating a reliable production deployment process while maintaining the ability to recover from faulty releases.",
+              "solution": "Implemented an automated GitHub Actions pipeline that tests the backend, builds a multi-stage Docker image, publishes both latest and commit-SHA tags to Azure Container Registry, deploys a new Azure Container Apps revision, and supports SHA-based rollback without rebuilding."
+            }
+          ],
+          "metrics": [
+            { "value": "597", "label": "Automated Tests" },
+            { "value": "122", "label": "Test Suites" },
+            { "value": "9", "label": "RTK Query Feature Slices" },
+            { "value": "2", "label": "Independent CI/CD Pipelines" }
+          ]
+        }
     },
     {
       "id": "proj-2",
@@ -56,31 +65,44 @@
       "description": "A movie discovery platform that helps viewers identify films featured in YouTube recap videos. Users can search for movies and view their official posters and details, reducing confusion from vague or misleading recap descriptions.",
       "image": "img/recapped.png",
       "tags": ["Reactjs", "Django", "DRF", "PostgreSQL", "Docker", "Gemini-API", "OMDB-API"],
-      "liveUrl": "https://github.com/MagMC007/Recapped",
+      "liveUrl": "",
       "githubUrl": "https://github.com/MagMC007/Recapped",
       "caseStudy": {
-        "overview": "A distributed multiplayer design canvas allowing engineering teams to sketch system architectures and co-edit diagrams in real time with sub-40ms synchronization.",
-        "role": "Frontend & Real-Time Protocol Engineer",
-        "timeline": "2 Months (2024)",
-        "problem": "Remote teams lack zero-latency tools for rapid architectural whiteboarding during sprints without heavy login walls or lagging video sharing.",
-        "architecture": [
-          "Hardware-accelerated HTML5 Canvas 2D engine rendering bezier curves and connectors",
-          "Lean action-based delta message protocol over WebSockets (< 5 KB/s bandwidth)",
-          "Next.js App Router with IndexedDB local cache for offline session resilience"
-        ],
-        "challenges": [
-          {
-            "challenge": "Handling concurrent stroke edits without cursor jump or visual jitter.",
-            "solution": "Decoupled rendering into an authoritative background canvas and a client-side speculative buffer with cursor interpolation."
-          }
-        ],
-        "metrics": [
-          { "value": "< 35ms", "label": "Sync Latency" },
-          { "value": "60 FPS", "label": "Render Frame Rate" },
-          { "value": "50+", "label": "Concurrent Peers" },
-          { "value": "100%", "label": "Data Integrity" }
-        ]
-      }
+          "overview": "Engineered a full-stack movie-recap discovery platform that transforms scattered YouTube recap videos into structured, searchable content with movie metadata, multiple recap sources, filtering, ratings, and AI-assisted movie identification.",
+          "role": "Full-Stack Developer",
+          "timeline": "2025–2026",
+          "problem": "Movie recap viewers often have no reliable way to judge a video's quality before watching. YouTube search results are dominated by inconsistent titles, clickbait thumbnails, and limited movie context, forcing viewers to repeatedly open and abandon videos before finding a satisfying recap.",
+          "architecture": [
+            "React frontend consuming a Django REST Framework API through Axios, with React YouTube Player for embedded recap playback",
+            "Django and Django REST Framework backend exposing RESTful APIs with JWT-based authentication and paginated movie resources",
+            "PostgreSQL relational database storing structured movie metadata, recap sources, users, and ratings",
+            "Dockerized multi-service environment running the frontend, Django backend, and PostgreSQL database consistently across development environments"
+          ],
+          "challenges": [
+            {
+              "challenge": "YouTube recap videos often contain inconsistent or misleading titles, making it difficult to reliably associate a video with the movie it describes.",
+              "solution": "Integrated Google Gemini to extract movie titles from recap metadata, while restricting ingestion to selected trusted YouTube channels to reduce incorrect AI-generated matches."
+            },
+            {
+              "challenge": "Movie recap videos lacked the contextual information users need to decide whether a movie is worth watching.",
+              "solution": "Integrated the OMDb API to enrich extracted movie titles with posters, genres, countries of origin, and release years, transforming individual videos into structured movie records."
+            },
+            {
+              "challenge": "Users needed to discover relevant recaps without repeatedly searching through large collections of videos.",
+              "solution": "Implemented paginated movie listings with combined year, country, and genre filtering, allowing users to narrow the catalog and compare multiple recap sources for the same movie."
+            },
+            {
+              "challenge": "The platform required a consistent development environment across its frontend, backend, and database services.",
+              "solution": "Containerized the complete application with Docker and Docker Compose, allowing the React client, Django API, and PostgreSQL database to be launched and developed as a unified environment."
+            }
+          ],
+          "metrics": [
+            { "value": "3", "label": "External APIs Integrated" },
+            { "value": "3", "label": "Dockerized Services" },
+            { "value": "1–5", "label": "Movie Rating Scale" },
+            { "value": "3", "label": "Movie Filter Dimensions" }
+          ]
+        }
     },
     {
       "id": "proj-3",
@@ -90,29 +112,37 @@
       "description": "A clinic-verified patient health record system spanning web and mobile. Every clinic visit is one unified encounter evaluation, vitals, labs, diagnosis, and prescription together with patient-approved, time-boxed access grants controlling which clinics can read or write to that history.",
       "image": "img/afya.jpg",
       "tags": ["Go", "Gin", "PostgreSQL", "CI/CD"],
-      "liveUrl": "https://github.com/A2SV-ASTU/Afya",
+      "liveUrl": "",
       "githubUrl": "https://github.com/A2SV-ASTU/Afya",
       "caseStudy": {
-        "overview": "Secure double-entry transactional accounting API with mathematical invariance guarantees, cryptographic audit logs, and automated reconciliation.",
-        "role": "Backend Architect",
-        "timeline": "2 Months (2024)",
-        "problem": "Naive balance updates in web apps lead to race conditions and account drift. OmniFlow guarantees zero balance drift via strict ACID boundaries.",
+        "overview": "Built the backend for Afya, an Ethiopian healthcare platform designed to centralize patient medical information and support secure collaboration between patients, doctors, and clinics, while coordinating a team of four backend developers.",
+        "role": "Backend Developer & Backend Team Lead",
+        "timeline": "3 Weeks (2026)",
+        "problem": "Patient medical information and clinical workflows can become fragmented across healthcare providers, making it difficult for doctors to access relevant patient information and for patients to maintain continuity of care. Afya was designed to provide a centralized platform with role-based access and structured medical records while supporting unreliable connectivity through offline data synchronization.",
         "architecture": [
-          "Double-entry bookkeeping enforcing debits equal credits in every atomic transaction",
-          "Pessimistic row-level locking (SELECT FOR UPDATE) preventing concurrent overdrafts",
-          "Idempotency-Key caching in Redis guaranteeing safe retry operations"
+          "Go and Gin REST API with PostgreSQL persistence and JWT-based authentication with role-based access control",
+          "Relational database schema designed around patients, doctors, clinics, medical records, encounters, and role-specific workflows",
+          "Offline-first synchronization layer for reliably transferring locally stored mobile data to the backend when connectivity becomes available",
+          "REST API contracts and backend interfaces designed to provide consistent integration points for mobile and frontend clients"
         ],
         "challenges": [
           {
-            "challenge": "Preventing deadlocks when accounts transfer funds mutually at the same millisecond.",
-            "solution": "Enforced deterministic account UUID ordering for all row acquisitions, eliminating circular waits."
+            "challenge": "Designing a backend architecture and database model that could support multiple healthcare roles and interconnected clinical workflows.",
+            "solution": "Planned the backend architecture and designed the PostgreSQL schema around the platform's core entities and relationships, while defining API contracts that provided clear interfaces for the mobile and frontend teams."
+          },
+          {
+            "challenge": "Maintaining consistent development across a backend team while the mobile and frontend clients were being developed in parallel.",
+            "solution": "Led a team of four backend developers, coordinated implementation across backend modules, and worked closely with mobile and frontend developers to align API contracts, request and response structures, and integration requirements."
+          },
+          {
+            "challenge": "Supporting healthcare workflows in environments where mobile devices may temporarily lose network connectivity.",
+            "solution": "Added an offline-data synchronization mechanism that allows locally stored data to be synchronized with the backend when connectivity is restored, reducing dependence on continuous network availability."
           }
         ],
         "metrics": [
-          { "value": "0", "label": "Invariant Violations" },
-          { "value": "100%", "label": "Idempotent Safety" },
-          { "value": "85+", "label": "Automated Tests" },
-          { "value": "< 22ms", "label": "Execution Time" }
+          { "value": "4", "label": "Backend Developers Led" },
+          { "value": "3", "label": "Client & Backend Teams Coordinated" },
+          { "value": "Offline-first", "label": "Data Synchronization" }
         ]
       }
     }
