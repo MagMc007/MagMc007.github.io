@@ -1,9 +1,11 @@
 import { motion } from "motion/react";
-import { GraduationCap, Briefcase, Calendar, MapPin, Award } from "lucide-react";
+import { GraduationCap, Briefcase, Award } from "lucide-react";
+import timelineData from "../data/experience.json";
 import { PORTFOLIO_DATA } from "../data/portfolioConfig";
 
 export default function TimelineSection() {
-  const { experience, education } = PORTFOLIO_DATA;
+  const { header, experience, education, verification } = timelineData;
+  const resumeLink = verification?.resumeUrl || PORTFOLIO_DATA.personal.resumeUrl;
 
   return (
     <section
@@ -21,13 +23,13 @@ export default function TimelineSection() {
           className="mb-12 md:mb-16"
         >
           <h2 className="text-5xl sm:text-7xl md:text-9xl pt-6 md:pt-0 font-display tracking-tighter leading-none">
-            EXPERIENCE <br />
-            <span className="text-white/20">& EDUCATION</span>
+            {header.titleLine1} <br />
+            <span className="text-white/20">{header.titleLine2}</span>
           </h2>
           <div className="flex items-center gap-4 mt-6 opacity-40">
             <div className="h-[1px] w-12 bg-white" />
             <span className="text-[10px] font-black tracking-[0.35em] uppercase">
-              Track Record & Academic Foundation
+              {header.badge}
             </span>
           </div>
         </motion.div>
@@ -39,12 +41,12 @@ export default function TimelineSection() {
             <div className="flex items-center gap-3 border-b border-white/10 pb-3">
               <Briefcase size={18} className="text-white/70" />
               <h3 className="text-xl sm:text-2xl font-display uppercase tracking-wider text-white">
-                Work & Leadership Experience
+                {experience.title}
               </h3>
             </div>
 
             <div className="relative pl-6 sm:pl-8 space-y-8 border-l border-white/15">
-              {experience.map((item, index) => (
+              {experience.items.map((item, index) => (
                 <motion.div
                   key={item.id}
                   initial={{ opacity: 0, x: -20 }}
@@ -113,12 +115,12 @@ export default function TimelineSection() {
             <div className="flex items-center gap-3 border-b border-white/10 pb-3">
               <GraduationCap size={18} className="text-white/70" />
               <h3 className="text-xl sm:text-2xl font-display uppercase tracking-wider text-white">
-                Education & Honors
+                {education.title}
               </h3>
             </div>
 
             <div className="relative pl-6 sm:pl-8 space-y-8 border-l border-white/15">
-              {education.map((item, index) => (
+              {education.items.map((item, index) => (
                 <motion.div
                   key={item.id}
                   initial={{ opacity: 0, x: -20 }}
@@ -162,24 +164,6 @@ export default function TimelineSection() {
                   </div>
                 </motion.div>
               ))}
-            </div>
-
-            {/* Quick Resume Link Box */}
-            <div className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3 mt-6">
-              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 block">
-                Verification & Resume
-              </span>
-              <p className="text-xs text-white/70 font-light leading-relaxed">
-                Looking for detailed course transcripts, certified contest rankings, or reference contacts?
-              </p>
-              <a
-                href={PORTFOLIO_DATA.personal.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-bold text-white underline underline-offset-4 hover:text-white/80"
-              >
-                Download Full Curriculum Vitae (PDF) →
-              </a>
             </div>
           </div>
         </div>

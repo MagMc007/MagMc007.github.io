@@ -4,6 +4,8 @@
  * ==============================================================================
  */
 
+import experienceData from "./experience.json";
+
 export interface TechItem {
   name: string;
   src: string;
@@ -191,76 +193,12 @@ export const PORTFOLIO_DATA: PortfolioConfig = {
   // --------------------------------------------------------------------------
   // 4. EDUCATION TIMELINE [MY EDUCATION]
   // --------------------------------------------------------------------------
-  education: [
-    {
-      id: "edu-1",
-      degree: "B.Sc. in Software Engineering",
-      school: "Addis Ababa University",
-      period: "2022 — Present",
-      location: "Addis Ababa, Ethiopia",
-      highlights: [
-        "Major GPA: 3.8 / 4.0 · Dean's List for Academic Excellence",
-        "Relevant Coursework: Data Structures & Algorithms, Distributed Systems, Database Management, Operating Systems, Computer Networks",
-        "Capstone: Scalable Microservice Architecture for Distributed Resource Allocation"
-      ]
-    },
-    {
-      id: "edu-2",
-      degree: "Competitive Programming & Software Engineering Fellowship",
-      school: "Africa to Silicon Valley (A2SV)",
-      period: "2023 — Present",
-      location: "Addis Ababa, Ethiopia",
-      highlights: [
-        "Rigorous algorithmic problem solving: solved 600+ LeetCode & Codeforces problems in graphs, dynamic programming, and advanced data structures",
-        "Trained in high-standards software engineering practices, system design, CI/CD pipelines, and agile teamwork with industry mentors"
-      ]
-    }
-  ],
+  education: experienceData.education.items as EducationItem[],
 
   // --------------------------------------------------------------------------
   // 5. EXPERIENCE TIMELINE [MY EXPERIENCE]
   // --------------------------------------------------------------------------
-  experience: [
-    {
-      id: "exp-1",
-      role: "Software Engineer (Fellow / Intern)",
-      organization: "A2SV Inc.",
-      period: "2024 — Present",
-      location: "Remote / Addis Ababa",
-      type: "Internship",
-      bullets: [
-        "Architected scalable backend microservices using Go (Gin) and PostgreSQL, reducing endpoint response latency by 35% through Redis caching and query indexing.",
-        "Collaborated with cross-functional engineering teams to implement clean React/TypeScript frontends with strict WCAG accessibility and responsive design."
-      ],
-      techStack: ["Go", "Gin", "PostgreSQL", "React", "TypeScript", "Docker"]
-    },
-    {
-      id: "exp-2",
-      role: "Backend & Systems Developer",
-      organization: "Freelance & University Tech Hub",
-      period: "2023 — 2024",
-      location: "Addis Ababa, Ethiopia",
-      type: "Freelance",
-      bullets: [
-        "Built enterprise student-management and scheduling APIs using Django and PostgreSQL, supporting 2,500+ daily active student sessions with 99.9% uptime.",
-        "Engineered automated GitHub Actions CI/CD workflows and containerized deployments with Docker and Azure App Services."
-      ],
-      techStack: ["Python", "Django", "PostgreSQL", "Docker", "Azure", "GitHub Actions"]
-    },
-    {
-      id: "exp-3",
-      role: "Hackathon Lead & Open Source Contributor",
-      organization: "GDG & Tech Communities",
-      period: "2023 — 2024",
-      location: "Addis Ababa, Ethiopia",
-      type: "Hackathon",
-      bullets: [
-        "Won 1st Place at national student hackathon by pitching and building a real-time humanitarian logistics tracking platform in under 48 hours.",
-        "Actively contributed to open-source developer tooling and mentored junior students in data structures and git workflows."
-      ],
-      techStack: ["React", "Node.js", "MongoDB", "WebSockets"]
-    }
-  ],
+  experience: experienceData.experience.items as ExperienceItem[],
 
   // --------------------------------------------------------------------------
   // 6. SELECTED WORKS (Projects with In-Depth Case Studies)

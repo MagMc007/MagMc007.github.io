@@ -1,0 +1,67 @@
+{
+  "header": {
+    "titleLine1": "EXPERIENCE",
+    "titleLine2": "& EDUCATION",
+    "badge": "Track Record & Academics"
+  },
+  "experience": {
+    "title": "Work & Leadership Experience",
+    "items": [
+      {
+        "id": "exp-1",
+        "role": "Software Engineer Intern",
+        "organization": "A2SV - Africa to Silicon Valley",
+        "period": "Jul 2026 — Aug 2026",
+        "location": "Hybrid - Adama",
+        "type": "Internship",
+        "bullets": [
+            "Developed backend services with Go and PostgreSQL, contributing to API development, database management, and testing.",
+            "Implemented CI/CD workflows to improve development and deployment workflows.",
+            "Led backend coordination, contributing to architecture decisions and collaborating with frontend and mobile developers on system integration."
+          ],
+        "techStack": ["Go", "Gin", "GitHub Actions", "PostgreSQL"]
+      }, 
+      {
+        "id": "exp-2",
+        "role": "Club Member",
+        "organization": "CSEC ASTU",
+        "period": "Mar 2026 — Present",
+        "location": "Adama",
+        "type": "Student Organization",
+        "bullets": [
+          "Represented CSEC ASTU in the 2026 Ethiopian Collegiate Programming Contest (ETCPC).",
+          "Delivered Python programming lectures and tutorials to fellow students.",
+          "Participated in competitive programming through Codeforces and LeetCode, contributing to the club's problem-solving community."
+        ],
+        "techStack": ["Python", "Leadership", "Codeforces", "LeetCode"]
+      }
+    ]
+  },
+  "education": {
+    "title": "Education & Honors",
+    "items": [
+      {
+        "id": "edu-1",
+        "degree": "B.Sc. in Software Engineering",
+        "school": "Adama Science and Technology University",
+        "period": "2023 — Present",
+        "location": "Adama, Ethiopia",
+        "highlights": [
+          "Major GPA: 3.94 / 4.0 · Dean's List for Academic Excellence",
+          "Relevant Coursework: Data Structures & Algorithms, Systems Engineering, Software Design & Architecture, Database Management, Operating Systems, Computer Networks"
+        ]
+      },
+      {
+        "id": "edu-2",
+        "degree": "Competitive Programming & Software Engineering Fellowship",
+        "school": "Africa to Silicon Valley (A2SV)",
+        "period": "Feb 2026 — Present",
+        "location": "Adama, Ethiopia",
+        "highlights": [
+          "Rigorous algorithmic problem solving: solved 500+ LeetCode & Codeforces problems in graphs, dynamic programming, and advanced data structures",
+          "Trained in high-standards software engineering practices, system design, CI/CD pipelines, and agile teamwork with industry mentors"
+        ]
+      }
+    ]
+  }
+}
