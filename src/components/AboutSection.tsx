@@ -1,21 +1,28 @@
 import { motion } from "motion/react";
-import { PORTFOLIO_DATA } from "../data/portfolioConfig";
+import aboutData from "../data/about.json";
+
+function renderHighlightedText(text: string, highlights: string[] = []) {
+  if (!highlights || highlights.length === 0) return text;
+  const regex = new RegExp(`(${highlights.map((h) => h.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`, "g");
+  const parts = text.split(regex);
+  return parts.map((part, i) =>
+    highlights.includes(part) ? (
+      <span key={i} className="font-bold text-black">
+        {part}
+      </span>
+    ) : (
+      part
+    )
+  );
+}
 
 export default function AboutSection() {
-  const { personal, techStack } = PORTFOLIO_DATA;
-
-  const categories: Array<"Languages" | "Frontend" | "Backend" | "Infra" | "Tools"> = [
-    "Languages",
-    "Frontend",
-    "Backend",
-    "Infra",
-    "Tools"
-  ];
+  const { header, headline, expertise, philosophy, calloutQuote, techStack } = aboutData;
 
   return (
     <section
       id="about"
-      aria-label="About Merga"
+      aria-label={header.badge}
       className="relative z-20 min-h-screen bg-white p-6 sm:p-12 md:p-24 flex flex-col justify-center border-t border-black/5"
     >
       <div className="max-w-6xl mx-auto w-full flex flex-col gap-12 md:gap-16">
@@ -28,13 +35,13 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-6xl sm:text-7xl md:text-9xl pt-10 md:pt-0 font-display tracking-tighter leading-[0.85] mb-8">
-              THE <br />
-              <span className="text-outline">ENGINEER</span>
+              {header.titleLine1} <br />
+              <span className="text-outline">{header.titleLine2}</span>
             </h2>
             <div className="flex items-center gap-4 opacity-40">
               <div className="h-[1px] w-12 bg-black" />
               <span className="text-[10px] font-black tracking-[0.4em] uppercase">
-                About Merga
+                {header.badge}
               </span>
             </div>
           </motion.div>
@@ -51,26 +58,28 @@ export default function AboutSection() {
           >
             {/* Lead Headline */}
             <h3 className="text-3xl md:text-5xl font-display tracking-tight leading-tight">
-              Software Engineering student & <span className="italic">A2SVian</span> based in Ethiopia.
+              {headline.prefix}
+              {headline.highlight && <span className="italic">{headline.highlight}</span>}
+              {headline.suffix}
             </h3>
 
             {/* Expertise & Philosophy */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <span className="text-[10px] font-black tracking-[0.2em] uppercase opacity-30">
-                  Expertise
+                  {expertise.label}
                 </span>
                 <p className="text-lg font-light leading-relaxed text-black/70">
-                  Specializing in <span className="font-bold text-black">Full-Stack Systems</span> and <span className="font-bold text-black">Competitive Programming</span>. I thrive on the challenge of optimizing algorithms while building scalable, end-to-end architectures.
+                  {renderHighlightedText(expertise.text, expertise.highlights)}
                 </p>
               </div>
 
               <div className="space-y-4">
                 <span className="text-[10px] font-black tracking-[0.2em] uppercase opacity-30">
-                  Philosophy
+                  {philosophy.label}
                 </span>
                 <p className="text-lg font-light leading-relaxed text-black/70">
-                  {personal.philosophy}
+                  {philosophy.text}
                 </p>
               </div>
             </div>
@@ -78,7 +87,7 @@ export default function AboutSection() {
             {/* Bio Callout */}
             <div className="pt-8 border-t border-black/5">
               <p className="text-xl md:text-2xl font-light leading-relaxed text-black/80">
-                {personal.calloutQuote}
+                {calloutQuote.text}
               </p>
             </div>
 
@@ -86,28 +95,27 @@ export default function AboutSection() {
             <div className="space-y-6 pt-8 border-t border-black/5">
               <div>
                 <h4 className="text-2xl sm:text-3xl font-display tracking-tight uppercase">
-                  Tech Stack & Tools
+                  {techStack.title}
                 </h4>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {categories.map((cat) => {
-                  const items = techStack.filter((t) => t.category === cat);
-                  if (items.length === 0) return null;
+                {techStack.categories.map((category) => {
+                  if (!category.skills || category.skills.length === 0) return null;
 
                   return (
                     <div
-                      key={cat}
+                      key={category.name}
                       className="p-5 rounded-2xl bg-neutral-50 border border-black/5 space-y-4 hover:border-black/20 transition-colors"
                     >
                       <div className="border-b border-black/5 pb-2">
                         <span className="text-[11px] font-black tracking-[0.2em] uppercase text-black/70">
-                          {cat}
+                          {category.name}
                         </span>
                       </div>
 
                       <div className="flex flex-wrap gap-3 items-center">
-                        {items.map((tech) => (
+                        {category.skills.map((tech) => (
                           <div
                             key={tech.name}
                             className="group relative flex items-center gap-2 px-2.5 py-1.5 rounded-xl bg-white border border-black/10 shadow-2xs hover:shadow-sm hover:border-black/30 transition-all cursor-default"

@@ -1,0 +1,75 @@
+{
+  "header": {
+    "titleLine1": "THE",
+    "titleLine2": "ENGINEER",
+    "badge": "About Merga"
+  },
+  "headline": {
+    "prefix": "Software Engineering student & ",
+    "highlight": "A2SVian",
+    "suffix": " based in Ethiopia."
+  },
+  "expertise": {
+    "label": "Expertise",
+    "text": "I specialize in Full-Stack Systems and Backend Engineering, with a strong foundation in competitive programming. I enjoy solving complex problems and turning them into reliable, scalable systems from designing APIs and databases to deploying production-ready applications.",
+    "highlights": ["Full-Stack Systems",  "Backend Engineering"]
+  },
+  "philosophy": {
+    "label": "Philosophy",
+    "text": "I believe great software comes from understanding the problem deeply before writing the code. I value thoughtful architecture, clean user experiences, performance, and maintainability, while paying attention to the details that turn a working solution into a well-engineered product."
+  },
+  "calloutQuote": {
+    "text": "I’m driven by the process of turning difficult problems into useful software. I enjoy taking ownership of a project from the initial idea to the final implementation, while learning from the challenges along the way. A2SV has strengthened that mindset by pushing me to solve problems rigorously, communicate clearly, and build alongside other ambitious engineers. I’m always looking for the next problem worth solving and a better way to solve it."
+  },
+  "techStack": {
+    "title": "Tech Stack & Tools",
+    "categories": [
+      {
+        "name": "Languages",
+        "skills": [
+          { "name": "JavaScript", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+          { "name": "TypeScript", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+          { "name": "Python", "src": "https://skillicons.dev/icons?i=py" },
+          { "name": "Go", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" }
+        ]
+      },
+      {
+        "name": "Frontend",
+        "skills": [
+          { "name": "React", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+          { "name": "Next.js", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+          { "name": "Redux", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
+          { "name": "Tailwind", "src": "https://skillicons.dev/icons?i=tailwind" }
+        ]
+      },
+      {
+        "name": "Backend",
+        "skills": [
+          { "name": "Django", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
+          { "name": "Gin", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" },
+          { "name": "Node.js", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+          { "name": "Express.js", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+          { "name": "PostgreSQL", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+          { "name": "MongoDB", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" }
+        ]
+      },
+      {
+        "name": "Infra",
+        "skills": [
+          { "name": "CI/CD", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" },
+          { "name": "Docker", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+          { "name": "Azure", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
+          { "name": "Git", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+          { "name": "Linux", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" }
+        ]
+      },
+      {
+        "name": "Tools",
+        "skills": [
+          { "name": "VS Code", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+          { "name": "Postman", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" }
+        ]
+      }
+    ]
+  }
+}
