@@ -1,0 +1,120 @@
+{
+  "header": {
+    "titleLine1": "SELECTED",
+    "titleLine2": "WORKS",
+    "badge": "Projects"
+  },
+  "actions": {
+    "liveDemo": "Live Demo",
+    "viewGithub": "View GitHub",
+    "readCaseStudy": "Read Case Study"
+  },
+  "projects": [
+    {
+      "id": "proj-1",
+      "number": "01",
+      "title": "Kiray",
+      "tagline": "A peer-to-peer rental marketplace",
+      "description": "A full-stack platform for connecting property owners with tenants in Addis Ababa. It features detailed property listings, interactive maps, image-rich listings, location-based search for the properties that are listed.",
+      "image": "img/kiray.png",
+      "tags": ["NodeJS", "ExpressJS", "MongoDB", "React", "NextJS", "Redux","Docker", "Azure", "CI/CD", "Firebase", "Cloudinary", "Mapbox"],
+      "liveUrl": "https://kirayp2p.tech",
+      "githubUrl": "https://github.com/MagMC007/Kiray",
+      "caseStudy": {
+        "overview": "Engineered a low-latency telemetry ingestion pipeline processing 15,000+ metric points/sec with real-time anomaly detection, interactive waterfall traces, and automated alerts.",
+        "role": "Lead Systems Architect & Full-Stack Developer",
+        "timeline": "3 Months (2024)",
+        "problem": "Development teams struggle with bloated, expensive APM solutions requiring complex agent setups. DevPulse offers an ultra-lightweight daemon with sub-25ms query latency.",
+        "architecture": [
+          "Go & Gin microservice handling asynchronous batched streaming into ring buffers",
+          "Partitioned PostgreSQL time-series schema with Redis in-memory cache",
+          "Responsive React client with virtualized waterfall trace rendering"
+        ],
+        "challenges": [
+          {
+            "challenge": "Database write bottlenecks under bursts of 20,000 concurrent events.",
+            "solution": "Implemented an in-memory worker queue with bulk insert staging, reducing write IOPS by 78%."
+          },
+          {
+            "challenge": "Rendering large distributed trace trees without browser frame drops.",
+            "solution": "Created virtualized DOM rendering maintaining steady 60 FPS scrolling for 10,000+ spans."
+          }
+        ],
+        "metrics": [
+          { "value": "< 18ms", "label": "p99 Ingestion Latency" },
+          { "value": "15K+", "label": "Events / Sec" },
+          { "value": "78%", "label": "IOPS Reduction" },
+          { "value": "99.9%", "label": "Uptime" }
+        ]
+      }
+    },
+    {
+      "id": "proj-2",
+      "number": "02",
+      "title": "Recapped",
+      "tagline": "A content curation platform",
+      "description": "A movie discovery platform that helps viewers identify films featured in YouTube recap videos. Users can search for movies and view their official posters and details, reducing confusion from vague or misleading recap descriptions.",
+      "image": "img/recapped.png",
+      "tags": ["Reactjs", "Django", "DRF", "PostgreSQL", "Docker", "Gemini-API", "OMDB-API"],
+      "liveUrl": "https://github.com/MagMC007/Recapped",
+      "githubUrl": "https://github.com/MagMC007/Recapped",
+      "caseStudy": {
+        "overview": "A distributed multiplayer design canvas allowing engineering teams to sketch system architectures and co-edit diagrams in real time with sub-40ms synchronization.",
+        "role": "Frontend & Real-Time Protocol Engineer",
+        "timeline": "2 Months (2024)",
+        "problem": "Remote teams lack zero-latency tools for rapid architectural whiteboarding during sprints without heavy login walls or lagging video sharing.",
+        "architecture": [
+          "Hardware-accelerated HTML5 Canvas 2D engine rendering bezier curves and connectors",
+          "Lean action-based delta message protocol over WebSockets (< 5 KB/s bandwidth)",
+          "Next.js App Router with IndexedDB local cache for offline session resilience"
+        ],
+        "challenges": [
+          {
+            "challenge": "Handling concurrent stroke edits without cursor jump or visual jitter.",
+            "solution": "Decoupled rendering into an authoritative background canvas and a client-side speculative buffer with cursor interpolation."
+          }
+        ],
+        "metrics": [
+          { "value": "< 35ms", "label": "Sync Latency" },
+          { "value": "60 FPS", "label": "Render Frame Rate" },
+          { "value": "50+", "label": "Concurrent Peers" },
+          { "value": "100%", "label": "Data Integrity" }
+        ]
+      }
+    },
+    {
+      "id": "proj-3",
+      "number": "03",
+      "title": "Afya",
+      "tagline": "One verified medical history, wherever care happens",
+      "description": "A clinic-verified patient health record system spanning web and mobile. Every clinic visit is one unified encounter evaluation, vitals, labs, diagnosis, and prescription together with patient-approved, time-boxed access grants controlling which clinics can read or write to that history.",
+      "image": "img/afya.jpg",
+      "tags": ["Go", "Gin", "PostgreSQL", "CI/CD"],
+      "liveUrl": "https://github.com/A2SV-ASTU/Afya",
+      "githubUrl": "https://github.com/A2SV-ASTU/Afya",
+      "caseStudy": {
+        "overview": "Secure double-entry transactional accounting API with mathematical invariance guarantees, cryptographic audit logs, and automated reconciliation.",
+        "role": "Backend Architect",
+        "timeline": "2 Months (2024)",
+        "problem": "Naive balance updates in web apps lead to race conditions and account drift. OmniFlow guarantees zero balance drift via strict ACID boundaries.",
+        "architecture": [
+          "Double-entry bookkeeping enforcing debits equal credits in every atomic transaction",
+          "Pessimistic row-level locking (SELECT FOR UPDATE) preventing concurrent overdrafts",
+          "Idempotency-Key caching in Redis guaranteeing safe retry operations"
+        ],
+        "challenges": [
+          {
+            "challenge": "Preventing deadlocks when accounts transfer funds mutually at the same millisecond.",
+            "solution": "Enforced deterministic account UUID ordering for all row acquisitions, eliminating circular waits."
+          }
+        ],
+        "metrics": [
+          { "value": "0", "label": "Invariant Violations" },
+          { "value": "100%", "label": "Idempotent Safety" },
+          { "value": "85+", "label": "Automated Tests" },
+          { "value": "< 22ms", "label": "Execution Time" }
+        ]
+      }
+    }
+  ]
+}

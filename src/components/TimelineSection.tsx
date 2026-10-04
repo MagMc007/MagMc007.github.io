@@ -4,8 +4,7 @@ import timelineData from "../data/experience.json";
 import { PORTFOLIO_DATA } from "../data/portfolioConfig";
 
 export default function TimelineSection() {
-  const { header, experience, education, verification } = timelineData;
-  const resumeLink = verification?.resumeUrl || PORTFOLIO_DATA.personal.resumeUrl;
+  const { header, experience, education  } = timelineData;
 
   return (
     <section

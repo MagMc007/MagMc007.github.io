@@ -5,6 +5,7 @@
  */
 
 import experienceData from "./experience.json";
+import projectsData from "./projects.json";
 
 export interface TechItem {
   name: string;
@@ -46,6 +47,7 @@ export interface ProjectItem {
   id: string;
   number: string;
   title: string;
+  tagline?: string;
   description: string;
   image: string;
   tags: string[];
@@ -203,142 +205,5 @@ export const PORTFOLIO_DATA: PortfolioConfig = {
   // --------------------------------------------------------------------------
   // 6. SELECTED WORKS (Projects with In-Depth Case Studies)
   // --------------------------------------------------------------------------
-  projects: [
-    {
-      id: "proj-1",
-      number: "01",
-      title: "DevPulse – Distributed Observability Platform",
-      description: "A high-throughput developer telemetry and log analysis platform built with Go, PostgreSQL, and React. Delivers real-time query tracing and latency dashboards.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-      tags: ["Go", "PostgreSQL", "React", "Docker", "Redis"],
-      liveUrl: "https://github.com/MagMC007",
-      githubUrl: "https://github.com/MagMC007",
-      caseStudy: {
-        overview: "Engineered a low-latency telemetry ingestion pipeline processing 15,000+ metric points/sec with real-time anomaly detection, interactive waterfall traces, and automated alerts.",
-        role: "Lead Systems Architect & Full-Stack Developer",
-        timeline: "3 Months (2024)",
-        problem: "Development teams struggle with bloated, expensive APM solutions requiring complex agent setups. DevPulse offers an ultra-lightweight daemon with sub-25ms query latency.",
-        architecture: [
-          "Go & Gin microservice handling asynchronous batched streaming into ring buffers",
-          "Partitioned PostgreSQL time-series schema with Redis in-memory cache",
-          "Responsive React client with virtualized waterfall trace rendering"
-        ],
-        challenges: [
-          {
-            challenge: "Database write bottlenecks under bursts of 20,000 concurrent events.",
-            solution: "Implemented an in-memory worker queue with bulk insert staging, reducing write IOPS by 78%."
-          },
-          {
-            challenge: "Rendering large distributed trace trees without browser frame drops.",
-            solution: "Created virtualized DOM rendering maintaining steady 60 FPS scrolling for 10,000+ spans."
-          }
-        ],
-        metrics: [
-          { value: "< 18ms", label: "p99 Ingestion Latency" },
-          { value: "15K+", label: "Events / Sec" },
-          { value: "78%", label: "IOPS Reduction" },
-          { value: "99.9%", label: "Uptime" }
-        ]
-      }
-    },
-    {
-      id: "proj-2",
-      number: "02",
-      title: "SyncCanvas – Real-Time Collaborative Workspace",
-      description: "Collaborative whiteboard and architectural canvas enabling concurrent multi-user diagramming, operational transformation, and team document streaming.",
-      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      tags: ["Next.js", "TypeScript", "Tailwind", "WebSockets", "Node.js"],
-      liveUrl: "https://github.com/MagMC007",
-      githubUrl: "https://github.com/MagMC007",
-      caseStudy: {
-        overview: "A distributed multiplayer design canvas allowing engineering teams to sketch system architectures and co-edit diagrams in real time with sub-40ms synchronization.",
-        role: "Frontend & Real-Time Protocol Engineer",
-        timeline: "2 Months (2024)",
-        problem: "Remote teams lack zero-latency tools for rapid architectural whiteboarding during sprints without heavy login walls or lagging video sharing.",
-        architecture: [
-          "Hardware-accelerated HTML5 Canvas 2D engine rendering bezier curves and connectors",
-          "Lean action-based delta message protocol over WebSockets (< 5 KB/s bandwidth)",
-          "Next.js App Router with IndexedDB local cache for offline session resilience"
-        ],
-        challenges: [
-          {
-            challenge: "Handling concurrent stroke edits without cursor jump or visual jitter.",
-            solution: "Decoupled rendering into an authoritative background canvas and a client-side speculative buffer with cursor interpolation."
-          }
-        ],
-        metrics: [
-          { value: "< 35ms", label: "Sync Latency" },
-          { value: "60 FPS", label: "Render Frame Rate" },
-          { value: "50+", label: "Concurrent Peers" },
-          { value: "100%", label: "Data Integrity" }
-        ]
-      }
-    },
-    {
-      id: "proj-3",
-      number: "03",
-      title: "OmniFlow – Micro-Fintech Transaction Engine",
-      description: "Robust transactional ledger and double-entry accounting API designed with Django REST framework, PostgreSQL ACID transactions, and automated audit trails.",
-      image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
-      tags: ["Python", "Django", "PostgreSQL", "CI/CD", "Docker"],
-      liveUrl: "https://github.com/MagMC007",
-      githubUrl: "https://github.com/MagMC007",
-      caseStudy: {
-        overview: "Secure double-entry transactional accounting API with mathematical invariance guarantees, cryptographic audit logs, and automated reconciliation.",
-        role: "Backend Architect",
-        timeline: "2 Months (2024)",
-        problem: "Naive balance updates in web apps lead to race conditions and account drift. OmniFlow guarantees zero balance drift via strict ACID boundaries.",
-        architecture: [
-          "Double-entry bookkeeping enforcing debits equal credits in every atomic transaction",
-          "Pessimistic row-level locking (SELECT FOR UPDATE) preventing concurrent overdrafts",
-          "Idempotency-Key caching in Redis guaranteeing safe retry operations"
-        ],
-        challenges: [
-          {
-            challenge: "Preventing deadlocks when accounts transfer funds mutually at the same millisecond.",
-            solution: "Enforced deterministic account UUID ordering for all row acquisitions, eliminating circular waits."
-          }
-        ],
-        metrics: [
-          { value: "0", label: "Invariant Violations" },
-          { value: "100%", label: "Idempotent Safety" },
-          { value: "85+", label: "Automated Tests" },
-          { value: "< 22ms", label: "Execution Time" }
-        ]
-      }
-    },
-    {
-      id: "proj-4",
-      number: "04",
-      title: "AlgoVisualizer – Interactive Code Algorithm Lab",
-      description: "Interactive visual simulator for graph traversals, shortest-path algorithms (Dijkstra, A*), and dynamic programming memory matrices built for university students.",
-      image: "https://images.unsplash.com/photo-1516116211227-bbc0ff554f67?auto=format&fit=crop&w=1200&q=80",
-      tags: ["React", "TypeScript", "Canvas API", "Tailwind"],
-      liveUrl: "https://github.com/MagMC007",
-      githubUrl: "https://github.com/MagMC007",
-      caseStudy: {
-        overview: "Educational algorithm visualizer demonstrating complex graph searches, dynamic programming memoization grids, and tree rebalancing step-by-step.",
-        role: "Creator & Frontend Developer",
-        timeline: "1 Month (2023)",
-        problem: "Computer science students struggle to build mental models of abstract graph theory and recursion without interactive step-through controls.",
-        architecture: [
-          "Generator-function execution engine pausing algorithm loops between frames",
-          "Interactive graph node editor allowing custom weight and edge creation",
-          "Clean React + Canvas rendering with speed controls and call-stack introspection"
-        ],
-        challenges: [
-          {
-            challenge: "Managing step-by-step state pausing without freezing the browser event loop.",
-            solution: "Refactored traversal routines into ES6 generator yields mapped to requestAnimationFrame steps."
-          }
-        ],
-        metrics: [
-          { value: "12+", label: "Algorithms Visualized" },
-          { value: "60 FPS", label: "Animation Smoothness" },
-          { value: "500+", label: "Student Users" },
-          { value: "100%", label: "Client-Side Executed" }
-        ]
-      }
-    }
-  ]
+  projects: projectsData.projects as unknown as ProjectItem[]
 };

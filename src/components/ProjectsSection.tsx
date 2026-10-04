@@ -1,14 +1,15 @@
 import { motion } from "motion/react";
 import { ExternalLink, Github, BookOpen, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
-import { PORTFOLIO_DATA, ProjectItem } from "../data/portfolioConfig";
+import { ProjectItem } from "../data/portfolioConfig";
+import projectsData from "../data/projects.json";
 
 interface ProjectsSectionProps {
   onSelectCaseStudy: (project: ProjectItem) => void;
 }
 
 export default function ProjectsSection({ onSelectCaseStudy }: ProjectsSectionProps) {
-  const { projects } = PORTFOLIO_DATA;
+  const { header, actions, projects } = projectsData;
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
 
   const handleImageError = (id: string) => {
@@ -18,10 +19,10 @@ export default function ProjectsSection({ onSelectCaseStudy }: ProjectsSectionPr
   return (
     <section
       id="projects"
-      aria-label="Selected Works"
-      className="relative z-20 min-h-screen bg-black text-white p-6 sm:p-12 md:p-24 flex flex-col justify-center border-t border-white/10"
+      aria-label={header.badge}
+      className="relative z-20 min-h-screen bg-black text-white p-6 sm:p-10 md:p-24 flex flex-col justify-center border-t border-white/10"
     >
-      <div className="max-w-6xl mx-auto w-full">
+      <div className="max-w-5xl mx-auto w-full">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -31,13 +32,13 @@ export default function ProjectsSection({ onSelectCaseStudy }: ProjectsSectionPr
           className="mb-16 md:mb-24"
         >
           <h2 className="text-6xl sm:text-7xl md:text-9xl pt-10 md:pt-0 font-display tracking-tighter leading-none">
-            SELECTED <br />
-            <span className="text-white/20">WORKS</span>
+            {header.titleLine1} <br />
+            <span className="text-white/20">{header.titleLine2}</span>
           </h2>
           <div className="flex items-center gap-4 mt-8 opacity-40">
             <div className="h-[1px] w-12 bg-white" />
             <span className="text-[10px] font-black tracking-[0.4em] uppercase">
-              Projects
+              {header.badge}
             </span>
           </div>
         </motion.div>
@@ -60,10 +61,10 @@ export default function ProjectsSection({ onSelectCaseStudy }: ProjectsSectionPr
                 <div className="relative aspect-[16/10] overflow-hidden bg-white/5 rounded-2xl border border-white/10 shadow-xl">
                   {!isImageBroken ? (
                     <img
-                      src={project.image}
+                      src={project.image.startsWith("http") || project.image.startsWith("/") ? project.image : `/${project.image}`}
                       alt={project.title}
                       onError={() => handleImageError(project.id)}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                       referrerPolicy="no-referrer"
                       loading="lazy"
                     />
@@ -84,16 +85,16 @@ export default function ProjectsSection({ onSelectCaseStudy }: ProjectsSectionPr
                     </div>
                   )}
 
-                  {/* Hover Overlay with All 3 Action Icons: Live Link, GitHub, and Case Study */}
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3.5 z-20 backdrop-blur-[2px]">
+                  {/* Hover Action Icons: Live Link, GitHub, and Case Study without darkening */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3.5 z-20 pointer-events-none group-hover:pointer-events-auto">
                     {/* 1. Live Link */}
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3.5 rounded-full bg-white text-black hover:scale-110 active:scale-95 transition-transform shadow-lg focus-visible:outline-white"
-                      title="Live Demo"
-                      aria-label={`Live demo for ${project.title}`}
+                      className="p-3.5 rounded-full bg-white text-black hover:scale-110 active:scale-95 transition-transform shadow-2xl focus-visible:outline-white"
+                      title={actions.liveDemo}
+                      aria-label={`${actions.liveDemo} for ${project.title}`}
                     >
                       <ExternalLink size={18} />
                     </a>
@@ -103,19 +104,19 @@ export default function ProjectsSection({ onSelectCaseStudy }: ProjectsSectionPr
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3.5 rounded-full bg-white text-black hover:scale-110 active:scale-95 transition-transform shadow-lg focus-visible:outline-white"
-                      title="View GitHub"
-                      aria-label={`GitHub repo for ${project.title}`}
+                      className="p-3.5 rounded-full bg-white text-black hover:scale-110 active:scale-95 transition-transform shadow-2xl focus-visible:outline-white"
+                      title={actions.viewGithub}
+                      aria-label={`${actions.viewGithub} for ${project.title}`}
                     >
                       <Github size={18} />
                     </a>
 
                     {/* 3. Case Study */}
                     <button
-                      onClick={() => onSelectCaseStudy(project)}
-                      className="p-3.5 rounded-full bg-white text-black hover:scale-110 active:scale-95 transition-transform shadow-lg focus-visible:outline-white"
-                      title="Read Case Study"
-                      aria-label={`Read case study for ${project.title}`}
+                      onClick={() => onSelectCaseStudy(project as unknown as ProjectItem)}
+                      className="p-3.5 rounded-full bg-white text-black hover:scale-110 active:scale-95 transition-transform shadow-2xl focus-visible:outline-white"
+                      title={actions.readCaseStudy}
+                      aria-label={`${actions.readCaseStudy} for ${project.title}`}
                     >
                       <BookOpen size={18} />
                     </button>
@@ -123,7 +124,7 @@ export default function ProjectsSection({ onSelectCaseStudy }: ProjectsSectionPr
                 </div>
 
                 {/* Project Details */}
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   <div className="flex justify-between items-end">
                     <h3 className="text-2xl md:text-4xl font-display tracking-tight">
                       {project.title}
@@ -133,30 +134,26 @@ export default function ProjectsSection({ onSelectCaseStudy }: ProjectsSectionPr
                     </span>
                   </div>
 
+                  {/* Simple sentence description div */}
+                  {project.tagline && (
+                    <div className="text-sm sm:text-base text-white/80 font-normal leading-relaxed">
+                      {project.tagline}
+                    </div>
+                  )}
+
                   <p className="text-white/60 font-light leading-relaxed max-w-md">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2.5 pt-1">
+                  <div className="flex flex-wrap items-center justify-start gap-1.5 pt-1">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 border border-white/10 rounded-full text-white/70"
+                        className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 border border-white/10 rounded-full text-white/70"
                       >
                         {tag}
                       </span>
                     ))}
-                  </div>
-
-                  {/* Direct Case Study Link */}
-                  <div className="pt-1">
-                    <button
-                      onClick={() => onSelectCaseStudy(project)}
-                      className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-[0.2em] text-white/70 hover:text-white transition-colors border-b border-white/30 pb-0.5"
-                    >
-                      <span>Read Case Study</span>
-                      <ArrowUpRight size={13} />
-                    </button>
                   </div>
                 </div>
               </motion.div>
