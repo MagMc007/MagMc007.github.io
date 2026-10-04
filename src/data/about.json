@@ -56,10 +56,9 @@
       {
         "name": "Infra",
         "skills": [
-          { "name": "CI/CD", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" },
+          { "name": "CI/CD - Github Actions", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" },
           { "name": "Docker", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
           { "name": "Azure", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
-          { "name": "Git", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
           { "name": "Linux", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" }
         ]
       },
@@ -67,6 +66,7 @@
         "name": "Tools",
         "skills": [
           { "name": "VS Code", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+          { "name": "Git", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
           { "name": "Postman", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" }
         ]
       }

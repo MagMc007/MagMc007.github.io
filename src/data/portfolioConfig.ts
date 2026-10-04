@@ -6,6 +6,7 @@
 
 import experienceData from "./experience.json";
 import projectsData from "./projects.json";
+import contactData from "./contact.json";
 
 export interface TechItem {
   name: string;
@@ -117,43 +118,11 @@ export const PORTFOLIO_DATA: PortfolioConfig = {
   // 2. CONTACT INFORMATION & SOCIAL NETWORKS
   // --------------------------------------------------------------------------
   contact: {
-    email: "mergashasho7@gmail.com",
-    phone: "+251 966 203 485",
+    email: contactData.directMessage.email,
+    phone: contactData.directMessage.phone,
     location: "Addis Ababa, Ethiopia",
-    formspreeEndpoint: "https://formspree.io/f/YOUR_FORM_ID_HERE",
-
-    socials: [
-      {
-        name: "LinkedIn",
-        url: "https://www.linkedin.com/in/merga-mekonnen-a524502a0/",
-        icon: "https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg"
-      },
-      {
-        name: "GitHub",
-        url: "https://github.com/MagMC007",
-        icon: "https://skillicons.dev/icons?i=github"
-      },
-      {
-        name: "LeetCode",
-        url: "https://leetcode.com/u/magnifico25/",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/leetcode/leetcode-original.svg"
-      },
-      {
-        name: "Codeforces",
-        url: "https://codeforces.com/profile/Codermag",
-        icon: "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/codeforces/default.svg"
-      },
-      {
-        name: "Telegram",
-        url: "https://t.me/MagMVP",
-        icon: "https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/telegram/default.svg"
-      },
-      {
-        name: "X",
-        url: "https://x.com/mag1XFX",
-        icon: "https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg"
-      }
-    ]
+    formspreeEndpoint: contactData.directMessage.formspreeEndpoint,
+    socials: contactData.socialsSection.socials
   },
 
   // --------------------------------------------------------------------------

@@ -1,0 +1,65 @@
+{
+  "header": {
+    "titleLine1": "GET IN",
+    "titleLine2": "TOUCH",
+    "badge": "Connect with me"
+  },
+  "headline": {
+    "prefix": "I'm always open to ",
+    "highlight": "new opportunities",
+    "suffix": ", collaborations, or just a friendly chat about technology and engineering."
+  },
+  "socialsSection": {
+    "title": "Professional Networks & Profiles",
+    "socials": [
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/merga-mekonnen-a524502a0/",
+        "icon": "https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/MagMC007",
+        "icon": "https://skillicons.dev/icons?i=github"
+      },
+      {
+        "name": "LeetCode",
+        "url": "https://leetcode.com/u/magnifico25/",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/leetcode/leetcode-original.svg"
+      },
+      {
+        "name": "Codeforces",
+        "url": "https://codeforces.com/profile/Codermag",
+        "icon": "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/codeforces/default.svg"
+      },
+      {
+        "name": "Telegram",
+        "url": "https://t.me/MagMVP",
+        "icon": "https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/telegram/default.svg"
+      },
+      {
+        "name": "X",
+        "url": "https://x.com/mag1XFX",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg"
+      }
+    ]
+  },
+  "directMessage": {
+    "title": "Direct Message",
+    "phoneLabel": "Call me at",
+    "phone": "+251 966 203 485",
+    "emailLabel": "Prefer email? Reach out directly at",
+    "email": "mergashasho7@gmail.com",
+    "formspreeEndpoint": "https://formspree.io/f/YOUR_FORM_ID_HERE",
+    "form": {
+      "namePlaceholder": "Your Name",
+      "emailPlaceholder": "Your Email",
+      "messagePlaceholder": "Your Message",
+      "submitButton": "Send a message",
+      "submittingButton": "Sending...",
+      "successTitle": "Message Sent!",
+      "successMessage": "Thank you for reaching out. I'll get back to you soon.",
+      "sendAnotherButton": "Send another"
+    }
+  }
+}
