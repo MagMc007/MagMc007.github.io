@@ -4,6 +4,26 @@ import { useState } from "react";
 import { ProjectItem } from "../data/portfolioConfig";
 import projectsData from "../data/projects.json";
 
+const projectImages = import.meta.glob<string>("../img/*.{png,jpg,jpeg,svg,webp}", {
+  eager: true,
+  import: "default",
+});
+
+function resolveProjectImage(src: string): string {
+  if (!src) return "";
+  if (src.startsWith("http://") || src.startsWith("https://")) {
+    return src;
+  }
+  const filename = src.split("/").pop();
+  if (filename) {
+    const entry = Object.entries(projectImages).find(([key]) => key.endsWith(`/${filename}`));
+    if (entry) {
+      return entry[1];
+    }
+  }
+  return src.startsWith("/") ? src : `/${src}`;
+}
+
 interface ProjectsSectionProps {
   onSelectCaseStudy: (project: ProjectItem) => void;
 }
@@ -61,7 +81,7 @@ export default function ProjectsSection({ onSelectCaseStudy }: ProjectsSectionPr
                 <div className="relative aspect-[16/10] overflow-hidden bg-white/5 rounded-2xl border border-white/10 shadow-xl">
                   {!isImageBroken ? (
                     <img
-                      src={project.image.startsWith("http") || project.image.startsWith("/") ? project.image : `/${project.image}`}
+                      src={resolveProjectImage(project.image)}
                       alt={project.title}
                       onError={() => handleImageError(project.id)}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
