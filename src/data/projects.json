@@ -22,6 +22,24 @@
       "description": "A full-stack platform for connecting property owners with tenants in Addis Ababa. It features detailed property listings, interactive maps, image-rich listings, location-based search for the properties that are listed.",
       "image": "img/kiray.png",
       "tags": ["NodeJS", "ExpressJS", "MongoDB", "React", "NextJS", "Redux","Docker", "Azure", "CI/CD", "Firebase", "Cloudinary", "Mapbox"],
+      "techCategories": [
+        {
+          "category": "Core",
+          "technologies": ["Next.js", "TypeScript", "Node.js", "Express", "MongoDB"]
+        },
+        {
+          "category": "Frontend",
+          "technologies": ["React", "Redux Toolkit", "RTK Query"]
+        },
+        {
+          "category": "Infrastructure",
+          "technologies": ["Docker", "Azure", "GitHub Actions"]
+        },
+        {
+          "category": "Services",
+          "technologies": ["Firebase", "Cloudinary", "Mapbox"]
+        }
+      ],
       "liveUrl": "https://kirayp2p.tech",
       "githubUrl": "https://github.com/MagMC007/Kiray",
       "caseStudy": {
@@ -30,6 +48,24 @@
           "team": "Solo",
           "contribution": "Architecture, frontend, backend, testing, deployment",
           "timeline": "2 Months",
+          "techCategories": [
+            {
+              "category": "Core",
+              "technologies": ["Next.js", "TypeScript", "Node.js", "Express", "MongoDB"]
+            },
+            {
+              "category": "Frontend",
+              "technologies": ["React", "Redux Toolkit", "RTK Query"]
+            },
+            {
+              "category": "Infrastructure",
+              "technologies": ["Docker", "Azure", "GitHub Actions"]
+            },
+            {
+              "category": "Services",
+              "technologies": ["Firebase", "Cloudinary", "Mapbox"]
+            }
+          ],
           "problem": "Addis Ababa's rental market creates friction for both renters and landlords through broker fees, limited direct listing channels, unreliable property information, and difficulty navigating unfamiliar addresses. Kiray provides a centralized platform where landlords can self-list properties and renters can discover, evaluate, and contact them directly.",
           "architecture": [
             "Next.js 15, React 19, TypeScript, Redux Toolkit, and RTK Query frontend with feature-based architecture and runtime English/Amharic internationalisation",
@@ -75,6 +111,24 @@
       "description": "A movie discovery platform that helps viewers identify films featured in YouTube recap videos. Users can search for movies and view their official posters and details, reducing confusion from vague or misleading recap descriptions.",
       "image": "img/recapped.png",
       "tags": ["Reactjs", "Django", "DRF", "PostgreSQL", "Docker", "Gemini-API", "OMDB-API"],
+      "techCategories": [
+        {
+          "category": "Core",
+          "technologies": ["Python", "Django", "Django REST Framework", "PostgreSQL"]
+        },
+        {
+          "category": "Frontend",
+          "technologies": ["React", "Axios", "React YouTube Player"]
+        },
+        {
+          "category": "Infrastructure",
+          "technologies": ["Docker", "Docker Compose"]
+        },
+        {
+          "category": "Services & APIs",
+          "technologies": ["Google Gemini API", "OMDb API", "YouTube API"]
+        }
+      ],
       "liveUrl": "",
       "githubUrl": "https://github.com/MagMC007/Recapped",
       "caseStudy": {
@@ -83,6 +137,24 @@
           "team": "Solo",
           "contribution": "Architecture, React frontend, Django REST API, Gemini AI & OMDb integrations, Docker deployment",
           "timeline": "1 Month",
+          "techCategories": [
+            {
+              "category": "Core",
+              "technologies": ["Python", "Django", "Django REST Framework", "PostgreSQL"]
+            },
+            {
+              "category": "Frontend",
+              "technologies": ["React", "Axios", "React YouTube Player"]
+            },
+            {
+              "category": "Infrastructure",
+              "technologies": ["Docker", "Docker Compose"]
+            },
+            {
+              "category": "Services & APIs",
+              "technologies": ["Google Gemini API", "OMDb API", "YouTube API"]
+            }
+          ],
           "problem": "Movie recap viewers often have no reliable way to judge a video's quality before watching. YouTube search results are dominated by inconsistent titles, clickbait thumbnails, and limited movie context, forcing viewers to repeatedly open and abandon videos before finding a satisfying recap.",
           "architecture": [
             "React frontend consuming a Django REST Framework API through Axios, with React YouTube Player for embedded recap playback",
@@ -128,6 +200,24 @@
       "description": "A clinic-verified patient health record system spanning web and mobile. Every clinic visit is one unified encounter evaluation, vitals, labs, diagnosis, and prescription together with patient-approved, time-boxed access grants controlling which clinics can read or write to that history.",
       "image": "img/afya.jpg",
       "tags": ["Go", "Gin", "PostgreSQL", "CI/CD"],
+      "techCategories": [
+        {
+          "category": "Core",
+          "technologies": ["Go", "Gin", "PostgreSQL", "JWT Authentication"]
+        },
+        {
+          "category": "Architecture",
+          "technologies": ["RESTful APIs", "RBAC", "Offline-First Sync"]
+        },
+        {
+          "category": "Infrastructure",
+          "technologies": ["Docker", "GitHub Actions CI/CD"]
+        },
+        {
+          "category": "Tooling",
+          "technologies": ["Postman", "Git", "GitFlow"]
+        }
+      ],
       "liveUrl": "",
       "githubUrl": "https://github.com/A2SV-ASTU/Afya",
       "caseStudy": {
@@ -136,6 +226,24 @@
         "team": "4 developers",
         "contribution": "API architecture, authentication, database design, offline sync, deployment",
         "timeline": "1 Month",
+        "techCategories": [
+          {
+            "category": "Core",
+            "technologies": ["Go", "Gin", "PostgreSQL", "JWT Authentication"]
+          },
+          {
+            "category": "Architecture",
+            "technologies": ["RESTful APIs", "RBAC", "Offline-First Sync"]
+          },
+          {
+            "category": "Infrastructure",
+            "technologies": ["Docker", "GitHub Actions CI/CD"]
+          },
+          {
+            "category": "Tooling",
+            "technologies": ["Postman", "Git", "GitFlow"]
+          }
+        ],
         "problem": "Patient medical information and clinical workflows can become fragmented across healthcare providers, making it difficult for doctors to access relevant patient information and for patients to maintain continuity of care. Afya was designed to provide a centralized platform with role-based access and structured medical records while supporting unreliable connectivity through offline data synchronization.",
         "architecture": [
           "Go and Gin REST API with PostgreSQL persistence and JWT-based authentication with role-based access control",

@@ -34,12 +34,18 @@ export interface ExperienceItem {
   techStack?: string[];
 }
 
+export interface TechCategory {
+  category: string;
+  technologies: string[];
+}
+
 export interface ProjectCaseStudyData {
   overview: string;
   role: string;
   team?: string;
   contribution?: string;
   timeline: string;
+  techCategories?: TechCategory[];
   problem: string;
   architecture: string[];
   challenges: { challenge: string; solution: string }[];
@@ -58,6 +64,7 @@ export interface ProjectItem {
   description: string;
   image: string;
   tags: string[];
+  techCategories?: TechCategory[];
   liveUrl: string;
   githubUrl: string;
   caseStudy: ProjectCaseStudyData;

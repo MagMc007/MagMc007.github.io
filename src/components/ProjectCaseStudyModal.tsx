@@ -26,6 +26,7 @@ export default function ProjectCaseStudyModal({ project, onClose }: ProjectCaseS
   if (!project) return null;
 
   const { caseStudy } = project;
+  const techCategories = caseStudy.techCategories || project.techCategories;
 
   return (
     <AnimatePresence>
@@ -53,7 +54,6 @@ export default function ProjectCaseStudyModal({ project, onClose }: ProjectCaseS
               <div className="flex items-center gap-2 text-white/40 font-mono text-[10px] uppercase tracking-widest">
                 <span>CASE STUDY // {project.number}</span>
                 <span>·</span>
-                <span>{caseStudy.timeline}</span>
               </div>
               <h2 className="text-2xl sm:text-4xl font-display tracking-tight text-white">
                 {project.title}
@@ -72,47 +72,42 @@ export default function ProjectCaseStudyModal({ project, onClose }: ProjectCaseS
             </button>
           </div>
 
-          {/* Quick Info & Action Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 mb-6 text-xs">
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-2.5 py-1 rounded-full bg-white/10 text-white/90 font-mono text-[10px]"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+          {/* Quick Links & Action Bar */}
+          {(Boolean(project.liveUrl && project.liveUrl.trim()) || Boolean(project.githubUrl && project.githubUrl.trim())) && (
+            <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 mb-6 text-xs">
+              <span className="text-[11px] font-mono uppercase tracking-wider text-white/50">
+                Project Links & Source Code
+              </span>
 
-            <div className="flex items-center gap-3">
-              {Boolean(project.liveUrl && project.liveUrl.trim()) && (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-black font-black uppercase text-[10px] tracking-wider hover:bg-neutral-200 transition-colors"
-                >
-                  <span>Live Demo</span>
-                  <ExternalLink size={12} />
-                </a>
-              )}
-              {Boolean(project.githubUrl && project.githubUrl.trim()) && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white font-black uppercase text-[10px] tracking-wider hover:bg-white/20 transition-colors"
-                >
-                  <Github size={12} />
-                  <span>GitHub</span>
-                </a>
-              )}
+              <div className="flex items-center gap-3">
+                {Boolean(project.liveUrl && project.liveUrl.trim()) && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-black font-black uppercase text-[10px] tracking-wider hover:bg-neutral-200 transition-colors"
+                  >
+                    <span>Live Demo</span>
+                    <ExternalLink size={12} />
+                  </a>
+                )}
+                {Boolean(project.githubUrl && project.githubUrl.trim()) && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white font-black uppercase text-[10px] tracking-wider hover:bg-white/20 transition-colors"
+                  >
+                    <Github size={12} />
+                    <span>GitHub</span>
+                  </a>
+                )}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Explicit Role & Ownership Overview */}
-          <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.04] border border-white/10 mb-8 space-y-3">
+          <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.04] border border-white/10 mb-6 space-y-3">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pb-3 border-b border-white/10">
               <div>
                 <span className="text-[10px] font-mono uppercase tracking-wider text-white/40 block">Role</span>
@@ -136,6 +131,46 @@ export default function ProjectCaseStudyModal({ project, onClose }: ProjectCaseS
               </div>
             )}
           </div>
+
+          {/* Reorganized Categorized Technologies */}
+          {techCategories && techCategories.length > 0 ? (
+            <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.04] border border-white/10 mb-8 space-y-3">
+              <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-white/50">
+                <Layers size={14} />
+                <span>Technologies & Stack</span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-1">
+                {techCategories.map((group) => (
+                  <div key={group.category} className="space-y-2">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-white/40 font-semibold block">
+                      {group.category}
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {group.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2.5 py-1 rounded-full bg-white/10 text-white/90 font-mono text-[10px]"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-wrap gap-2 mb-8">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-2.5 py-1 rounded-full bg-white/10 text-white/90 font-mono text-[10px]"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
 
           {/* Content Sections */}
           <div className="space-y-8 text-sm">
