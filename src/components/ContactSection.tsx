@@ -11,7 +11,7 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (directMessage.formspreeEndpoint.includes("YOUR_FORM_ID_HERE")) {
+    if (directMessage.formspreeEndpoint.includes("mwlveynb")) {
       const mailtoUrl = `mailto:${directMessage.email}?subject=${encodeURIComponent(
         `Portfolio Message from ${formData.name || "Colleague"}`
       )}&body=${encodeURIComponent(

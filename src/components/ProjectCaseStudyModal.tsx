@@ -73,7 +73,7 @@ export default function ProjectCaseStudyModal({ project, onClose }: ProjectCaseS
           </div>
 
           {/* Quick Info & Action Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 mb-8 text-xs">
+          <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 mb-6 text-xs">
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
                 <span
@@ -109,6 +109,32 @@ export default function ProjectCaseStudyModal({ project, onClose }: ProjectCaseS
                 </a>
               )}
             </div>
+          </div>
+
+          {/* Explicit Role & Ownership Overview */}
+          <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.04] border border-white/10 mb-8 space-y-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pb-3 border-b border-white/10">
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-white/40 block">Role</span>
+                <span className="text-white font-medium text-sm block mt-0.5">{caseStudy.role || project.role}</span>
+              </div>
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-white/40 block">Team Size</span>
+                <span className="text-white font-medium text-sm block mt-0.5">{caseStudy.team || project.team || "Solo"}</span>
+              </div>
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-white/40 block">Duration</span>
+                <span className="text-white font-medium text-sm block mt-0.5">{caseStudy.timeline || project.duration}</span>
+              </div>
+            </div>
+            {(caseStudy.contribution || project.contribution) && (
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-white/40 block mb-1">My Contribution</span>
+                <p className="text-white/80 font-light text-xs sm:text-sm leading-relaxed">
+                  {caseStudy.contribution || project.contribution}
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Content Sections */}

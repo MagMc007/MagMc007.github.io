@@ -37,6 +37,8 @@ export interface ExperienceItem {
 export interface ProjectCaseStudyData {
   overview: string;
   role: string;
+  team?: string;
+  contribution?: string;
   timeline: string;
   problem: string;
   architecture: string[];
@@ -49,6 +51,10 @@ export interface ProjectItem {
   number: string;
   title: string;
   tagline?: string;
+  role?: string;
+  team?: string;
+  contribution?: string;
+  duration?: string;
   description: string;
   image: string;
   tags: string[];

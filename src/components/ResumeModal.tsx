@@ -158,11 +158,6 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 </div>
               </div>
             </div>
-
-            {/* Note for the User */}
-            <div className="mt-4 p-3 rounded-xl bg-white/5 border border-white/10 text-[10px] text-white/50 leading-relaxed">
-              💡 <span className="font-bold text-white/70">Configuration Tip:</span> Place your compiled PDF at <code className="text-white/80">/public/resume.pdf</code>, or paste your Google Drive / LinkedIn document link inside <code className="text-white/80">src/data/portfolioConfig.ts</code> under <code className="text-white/80">personal.resumeUrl</code>.
-            </div>
           </motion.div>
         </div>
       )}
