@@ -109,7 +109,7 @@ export const PORTFOLIO_DATA: PortfolioConfig = {
     firstName: "MERGA",
     lastName: "MEKONNEN",
     targetRole: "Software Engineer",
-    location: "Addis Ababa, Ethiopia",
+    location: "Adama, Ethiopia",
     resumeUrl: "https://drive.google.com/file/d/1QZ-gP4PoZAOQIPZuYENoHSLqHFwcRdI5/view?usp=sharing",
 
     // [MY BIO] - 2-3 short paragraphs (~100-150 words total)
@@ -133,7 +133,7 @@ export const PORTFOLIO_DATA: PortfolioConfig = {
   contact: {
     email: contactData.directMessage.email,
     phone: contactData.directMessage.phone,
-    location: "Addis Ababa, Ethiopia",
+    location: "Adama, Ethiopia",
     formspreeEndpoint: contactData.directMessage.formspreeEndpoint,
     socials: contactData.socialsSection.socials
   },

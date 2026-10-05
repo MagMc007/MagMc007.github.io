@@ -66,7 +66,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div className="space-y-3">
             <span className="opacity-30 block">Location</span>
             <p className="text-white/70 font-light leading-relaxed">
-              Addis Ababa, <br /> Ethiopia
+              Adama, <br /> Ethiopia
             </p>
           </div>
         </div>

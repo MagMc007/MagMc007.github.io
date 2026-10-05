@@ -22,29 +22,11 @@
       "description": "A full-stack platform for connecting property owners with tenants in Addis Ababa. It features detailed property listings, interactive maps, image-rich listings, location-based search for the properties that are listed.",
       "image": "img/kiray.png",
       "tags": ["NodeJS", "ExpressJS", "MongoDB", "React", "NextJS", "Redux","Docker", "Azure", "CI/CD", "Firebase", "Cloudinary", "Mapbox"],
-      "techCategories": [
-        {
-          "category": "Core",
-          "technologies": ["Next.js", "TypeScript", "Node.js", "Express", "MongoDB"]
-        },
-        {
-          "category": "Frontend",
-          "technologies": ["React", "Redux Toolkit", "RTK Query"]
-        },
-        {
-          "category": "Infrastructure",
-          "technologies": ["Docker", "Azure", "GitHub Actions"]
-        },
-        {
-          "category": "Services",
-          "technologies": ["Firebase", "Cloudinary", "Mapbox"]
-        }
-      ],
       "liveUrl": "https://kirayp2p.tech",
       "githubUrl": "https://github.com/MagMC007/Kiray",
       "caseStudy": {
           "overview": "Engineered and deployed a full-stack P2P rental marketplace for Addis Ababa, enabling commission-free landlord listings, map-first property discovery, advanced filtering, direct contact, reviews, and role-driven administration.",
-          "role": "Solo Full-Stack Developer",
+          "role": "Full-Stack Developer",
           "team": "Solo",
           "contribution": "Architecture, frontend, backend, testing, deployment",
           "timeline": "2 Months",
@@ -111,24 +93,6 @@
       "description": "A movie discovery platform that helps viewers identify films featured in YouTube recap videos. Users can search for movies and view their official posters and details, reducing confusion from vague or misleading recap descriptions.",
       "image": "img/recapped.png",
       "tags": ["Reactjs", "Django", "DRF", "PostgreSQL", "Docker", "Gemini-API", "OMDB-API"],
-      "techCategories": [
-        {
-          "category": "Core",
-          "technologies": ["Python", "Django", "Django REST Framework", "PostgreSQL"]
-        },
-        {
-          "category": "Frontend",
-          "technologies": ["React", "Axios", "React YouTube Player"]
-        },
-        {
-          "category": "Infrastructure",
-          "technologies": ["Docker", "Docker Compose"]
-        },
-        {
-          "category": "Services & APIs",
-          "technologies": ["Google Gemini API", "OMDb API", "YouTube API"]
-        }
-      ],
       "liveUrl": "",
       "githubUrl": "https://github.com/MagMC007/Recapped",
       "caseStudy": {
@@ -144,11 +108,11 @@
             },
             {
               "category": "Frontend",
-              "technologies": ["React", "Axios", "React YouTube Player"]
+              "technologies": ["React", "Axios"]
             },
             {
               "category": "Infrastructure",
-              "technologies": ["Docker", "Docker Compose"]
+              "technologies": ["Docker"]
             },
             {
               "category": "Services & APIs",
@@ -192,7 +156,7 @@
       "id": "proj-3",
       "number": "03",
       "title": "Afya",
-      "tagline": "One verified medical history, wherever care happens",
+      "tagline": "One verified medical history, wherever medical care happens",
       "role": "Backend Developer / Team Lead",
       "team": "4 developers",
       "contribution": "API architecture, authentication, database design, offline sync, deployment",
@@ -207,7 +171,7 @@
         },
         {
           "category": "Architecture",
-          "technologies": ["RESTful APIs", "RBAC", "Offline-First Sync"]
+          "technologies": ["RESTful APIs", "RBAC"]
         },
         {
           "category": "Infrastructure",
@@ -233,7 +197,7 @@
           },
           {
             "category": "Architecture",
-            "technologies": ["RESTful APIs", "RBAC", "Offline-First Sync"]
+            "technologies": ["RESTful APIs", "RBAC"]
           },
           {
             "category": "Infrastructure",
@@ -241,7 +205,7 @@
           },
           {
             "category": "Tooling",
-            "technologies": ["Postman", "Git", "GitFlow"]
+            "technologies": ["Postman", "Git", "GithHub"]
           }
         ],
         "problem": "Patient medical information and clinical workflows can become fragmented across healthcare providers, making it difficult for doctors to access relevant patient information and for patients to maintain continuity of care. Afya was designed to provide a centralized platform with role-based access and structured medical records while supporting unreliable connectivity through offline data synchronization.",

@@ -5,14 +5,14 @@
     "badge": "About Merga"
   },
   "headline": {
-    "prefix": "Software Engineering student & ",
+    "prefix": "A Software Engineer & ",
     "highlight": "A2SVian",
     "suffix": " based in Ethiopia."
   },
   "expertise": {
     "label": "Expertise",
-    "text": "I specialize in Full-Stack Systems and Backend Engineering, with a strong foundation in competitive programming. I enjoy solving complex problems and turning them into reliable, scalable systems from designing APIs and databases to deploying production-ready applications.",
-    "highlights": ["Full-Stack Systems",  "Backend Engineering"]
+    "text": "I am a Software Engineer specializing in Full-Stack Systems and Backend Engineering, with a strong foundation in competitive programming. I enjoy solving complex problems and turning them into reliable, scalable systems from designing APIs and databases to deploying production-ready applications.",
+    "highlights": ["Full-Stack Systems",  "Software Engineer", "Backend Engineering"]
   },
   "philosophy": {
     "label": "Philosophy",
