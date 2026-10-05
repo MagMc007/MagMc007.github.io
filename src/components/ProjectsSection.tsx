@@ -84,56 +84,55 @@ export default function ProjectsSection({ onSelectCaseStudy }: ProjectsSectionPr
                       </div>
                     </div>
                   )}
-
-                  {/* Hover Action Icons: Live Link, GitHub, and Case Study without darkening */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3.5 z-20 pointer-events-none group-hover:pointer-events-auto">
-                    {/* 1. Live Link (rendered only if liveUrl is provided and not empty) */}
-                    {Boolean(project.liveUrl && project.liveUrl.trim()) && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-3.5 rounded-full bg-white text-black hover:scale-110 active:scale-95 transition-transform shadow-2xl focus-visible:outline-white"
-                        title={actions.liveDemo}
-                        aria-label={`${actions.liveDemo} for ${project.title}`}
-                      >
-                        <ExternalLink size={18} />
-                      </a>
-                    )}
-
-                    {/* 2. GitHub */}
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3.5 rounded-full bg-white text-black hover:scale-110 active:scale-95 transition-transform shadow-2xl focus-visible:outline-white"
-                      title={actions.viewGithub}
-                      aria-label={`${actions.viewGithub} for ${project.title}`}
-                    >
-                      <Github size={18} />
-                    </a>
-
-                    {/* 3. Case Study */}
-                    <button
-                      onClick={() => onSelectCaseStudy(project as unknown as ProjectItem)}
-                      className="p-3.5 rounded-full bg-white text-black hover:scale-110 active:scale-95 transition-transform shadow-2xl focus-visible:outline-white"
-                      title={actions.readCaseStudy}
-                      aria-label={`${actions.readCaseStudy} for ${project.title}`}
-                    >
-                      <BookOpen size={18} />
-                    </button>
-                  </div>
                 </div>
 
                 {/* Project Details */}
                 <div className="space-y-3 sm:space-y-4">
-                  <div className="flex justify-between items-end">
+                  <div className="flex justify-between items-center gap-4">
                     <h3 className="text-2xl md:text-4xl font-display tracking-tight">
                       {project.title}
                     </h3>
-                    <span className="text-4xl font-display text-white/10 font-mono">
-                      {project.number}
-                    </span>
+
+                    {/* Action Links: Always visible in place of project number */}
+                    <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+                      {/* 1. Live Link (rendered only if liveUrl is provided and not empty) */}
+                      {Boolean(project.liveUrl && project.liveUrl.trim()) && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2.5 sm:p-3 rounded-full bg-white text-black hover:scale-110 active:scale-95 transition-transform shadow-lg focus-visible:outline-white"
+                          title={actions.liveDemo}
+                          aria-label={`${actions.liveDemo} for ${project.title}`}
+                        >
+                          <ExternalLink size={16} />
+                        </a>
+                      )}
+
+                      {/* 2. GitHub */}
+                      {Boolean(project.githubUrl && project.githubUrl.trim()) && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2.5 sm:p-3 rounded-full bg-white text-black hover:scale-110 active:scale-95 transition-transform shadow-lg focus-visible:outline-white"
+                          title={actions.viewGithub}
+                          aria-label={`${actions.viewGithub} for ${project.title}`}
+                        >
+                          <Github size={16} />
+                        </a>
+                      )}
+
+                      {/* 3. Case Study */}
+                      <button
+                        onClick={() => onSelectCaseStudy(project as unknown as ProjectItem)}
+                        className="p-2.5 sm:p-3 rounded-full bg-white text-black hover:scale-110 active:scale-95 transition-transform shadow-lg focus-visible:outline-white cursor-pointer"
+                        title={actions.readCaseStudy}
+                        aria-label={`${actions.readCaseStudy} for ${project.title}`}
+                      >
+                        <BookOpen size={16} />
+                      </button>
+                    </div>
                   </div>
 
                   {/* Simple sentence description div */}
