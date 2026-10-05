@@ -2,10 +2,21 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
+import {ViteImageOptimizer} from 'vite-plugin-image-optimizer';
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [
+      react(),
+      tailwindcss(),
+      // Compress images at build time (does not affect the dev server)
+      ViteImageOptimizer({
+        png: {quality: 75},
+        jpeg: {quality: 75},
+        jpg: {quality: 75},
+        webp: {quality: 75},
+      }),
+    ],
     resolve: {
       alias: {
         '@': path.resolve(import.meta.dirname, '.'),
