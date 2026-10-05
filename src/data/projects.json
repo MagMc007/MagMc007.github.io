@@ -20,7 +20,7 @@
       "contribution": "Architecture, frontend, backend, testing, deployment",
       "duration": "2026",
       "description": "A full-stack platform for connecting property owners with tenants in Addis Ababa. It features detailed property listings, interactive maps, image-rich listings, location-based search for the properties that are listed.",
-      "image": "img/kiray.png",
+      "image": "img/kiray.webp",
       "tags": ["NodeJS", "ExpressJS", "MongoDB", "React", "NextJS", "Redux","Docker", "Azure", "CI/CD", "Firebase", "Cloudinary", "Mapbox"],
       "liveUrl": "https://kirayp2p.tech",
       "githubUrl": "https://github.com/MagMC007/Kiray",
@@ -91,7 +91,7 @@
       "contribution": "Architecture, React frontend, Django REST API, Gemini AI & OMDb integrations, Docker deployment",
       "duration": "2025–2026",
       "description": "A movie discovery platform that helps viewers identify films featured in YouTube recap videos. Users can search for movies and view their official posters and details, reducing confusion from vague or misleading recap descriptions.",
-      "image": "img/recapped.png",
+      "image": "img/recapped.webp",
       "tags": ["Reactjs", "Django", "DRF", "PostgreSQL", "Docker", "Gemini-API", "OMDB-API"],
       "liveUrl": "",
       "githubUrl": "https://github.com/MagMC007/Recapped",
@@ -162,7 +162,7 @@
       "contribution": "API architecture, authentication, database design, offline sync, deployment",
       "duration": "3 weeks (2026)",
       "description": "A clinic-verified patient health record system spanning web and mobile. Every clinic visit is one unified encounter evaluation, vitals, labs, diagnosis, and prescription together with patient-approved, time-boxed access grants controlling which clinics can read or write to that history.",
-      "image": "img/afya.jpg",
+      "image": "img/afya.webp",
       "tags": ["Go", "Gin", "PostgreSQL", "CI/CD"],
       "techCategories": [
         {

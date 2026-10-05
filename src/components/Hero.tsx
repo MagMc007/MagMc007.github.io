@@ -2,7 +2,7 @@ import { motion, MotionValue } from "motion/react";
 import { ArrowDown } from "lucide-react";
 import { useState } from "react";
 import { PORTFOLIO_DATA } from "../data/portfolioConfig";
-import magPhoto from "../img/mag.png";
+import magPhoto from "../img/mag.webp";
 
 interface HeroProps {
   xLeft: MotionValue<number>;
