@@ -88,12 +88,12 @@
       "tagline": "A content curation platform",
       "role": "Full-Stack Developer",
       "team": "Solo",
-      "contribution": "Architecture, React frontend, Django REST API, Gemini AI & OMDb integrations, Docker deployment",
+      "contribution": "Architecture, React/Next frontend, Django REST API, Gemini AI & OMDb integrations, Docker container,Azure deployment",
       "duration": "2025–2026",
       "description": "A movie discovery platform that helps viewers identify films featured in YouTube recap videos. Users can search for movies and view their official posters and details, reducing confusion from vague or misleading recap descriptions.",
       "image": "img/recapped.webp",
-      "tags": ["Reactjs", "Django", "DRF", "PostgreSQL", "Docker", "Gemini-API", "OMDB-API"],
-      "liveUrl": "",
+      "tags": ["Reactjs","NextJS", "Django", "DRF", "PostgreSQL", "Docker", "Azure", "Gemini-API", "OMDB-API"],
+      "liveUrl": "https://recapped-delta.vercel.app/",
       "githubUrl": "https://github.com/MagMC007/Recapped",
       "caseStudy": {
           "overview": "Engineered a full-stack movie-recap discovery platform that transforms scattered YouTube recap videos into structured, searchable content with movie metadata, multiple recap sources, filtering, ratings, and AI-assisted movie identification.",
@@ -108,11 +108,11 @@
             },
             {
               "category": "Frontend",
-              "technologies": ["React", "Axios"]
+              "technologies": ["Next.js", "React"]
             },
             {
               "category": "Infrastructure",
-              "technologies": ["Docker"]
+              "technologies": ["Docker", "Azure"]
             },
             {
               "category": "Services & APIs",
@@ -145,10 +145,10 @@
             }
           ],
           "metrics": [
-            { "value": "3", "label": "External APIs Integrated" },
-            { "value": "3", "label": "Dockerized Services" },
-            { "value": "1–5", "label": "Movie Rating Scale" },
-            { "value": "3", "label": "Movie Filter Dimensions" }
+            { "value": "500+", "label": "Movie Recaps" },
+            { "value": "3", "label": "Integrated 3rd Party APIs" },
+            { "value": "20+", "label": "Countries" },
+            { "value": "15", "label": "Worldwid Creators" }
           ]
         }
     },
